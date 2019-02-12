@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='stylesheets/script.js') }}" defer></script>
+    <div class="topnav">
+        <a href="{{ url_for("index") }}">Home Page</a>
+        <a href="{{ url_for('list') }}">List all of the questions</a>
+        <a href='/ask-question' style="text-decoration: none">Ask a question</a>
+        <form action="{{ url_for("search") }}" method="GET">
+            <input type="text" name="search" placeholder="Search..">
+        </form>
+    </div>
+
+
+</head>
+<body>
+<h1>ÁSKMÉT</h1><br>
+<div style="text-align:center;">
+</div>
+<br><br>
+<table>
+    <tr>
+        <th>{{ header['ID'] }}</th>
+        <th>{{ header['Submission Time'] }}</th>
+        <th>{{ header['View Number'] }}</th>
+        <th>{{ header['Vote Number'] }}</th>
+        <th>{{ header['message'] }}</th>
+        <th>{{ header['Title'] }}</th>
+
+
+    </tr>
+    {% for line in questions %}
+        <tr>
+            <td>{{ line['id'] }}</td>
+            <td>{{ line['submission_time'] }}</td>
+            <td>{{ line['view_number'] }}</td>
+            <td>{{ line['vote_number'] }}</td>
+            <td>{{ line['message'] }}</td>
+            <td><a href="/question/{{ line["id"] }}" style="text-decoration: none">{{ line['title'] }}</a></td>
+
+        </tr>
+    {% endfor %}
+</table>
+</body>
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}
+</html>

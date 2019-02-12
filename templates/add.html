@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Add a Question</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='stylesheets/script.js') }}" defer></script>
+    <link rel="icon" href="{{ url_for('static', filename='stylesheets/teamlogo.jpeg') }}" type="image/gif"
+          sizes="16x16">
+
+</head>
+<body>
+<div style="text-align:center;">
+    <h1>Ask a question</h1>
+    <form action="/ask-question" method="POST">
+        <label for="question_title">Title of the question:</label>
+        <br>
+        <textarea id="text" name="title" rows="1" cols="20"></textarea>
+        <input type="text" name="view_number" value="5" hidden>
+        <input type="text" name="vote_number" value="25" hidden>
+        <input type="text" name="image" value="mages/image1.png" hidden>
+        <br><br>
+        <label for="problem_explanation">Explain the problem:</label>
+        <br>
+        <textarea id="message" name="message" rows="8" cols="80"></textarea>
+        <br>
+        <br>
+
+        <input class=" button " type=submit value="Submit">
+        <br><br>
+        <br><br>
+        <a href="{{ url_for("index") }}" class="button" style="text-decoration: none">Back to Home</a>
+</div>
+</form>
+</body>
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}
+</html>
+

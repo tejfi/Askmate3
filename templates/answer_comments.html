@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='stylesheets/script.js') }}" defer></script>
+    <link rel="icon" href="{{ url_for('static', filename='stylesheets/teamlogo.jpeg') }}" type="image/gif"
+          sizes="16x16">
+
+</head>
+<body>
+<h1>Comments</h1>
+{% for line in answer %}
+    <h2>{{ line['message'] }}</h2>
+    <div style="text-align:center;">
+        <form action="/answer/{{ id }}/new-comment" method="POST">
+            <h1><label for="answer_comments">Add comment to answer:</label></h1>
+            <input type="text" name="question_id" value="{{ line["question_id"] }}" hidden>
+            <br>
+            <textarea id="message" name="message" rows="8" cols="80"></textarea>
+            <br><br>
+            <br><br>
+            <br>
+            <input class=" button " type=submit value="Submit Comment">
+            <br><br>
+            <a href='/question/{{ line["question_id"] }}' class="button" style="text-decoration: none">Back to
+                Questions</a>
+        </form>
+    </div>
+{% endfor %}
+<table>
+    <tr>
+        {% for elem in header %}
+            <th>{{ elem }}</th>
+        {% endfor %}
+    </tr>
+    {% for comment in comments %}
+        <tr>
+            <th>{{ comment['message'] }}</th>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}
+</html>

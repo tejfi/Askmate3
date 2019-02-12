@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Add a comment</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='stylesheets/script.js') }}" defer></script>
+    <link  rel="icon" href="{{ url_for('static', filename='stylesheets/teamlogo.jpeg')}}" type="image/gif" sizes="16x16">
+
+</head>
+<body>
+<div style="text-align:center;">
+    <form action="{{ url_for('add_comment_to_question', question_id=question_id) }}" method="post">
+        <input type="hidden" name="question_id" value="{{ question_id }}">
+        <p>
+            <label for="comment"><strong>Your comment</strong></label>
+            <br><br>
+            <input type="text" class="comment" name="message" size="50" placeholder="Your comment goes here..">
+        </p>
+        <p>
+            <input class="button" type="submit" value="Send Comment">
+        </p>
+    </form>
+</div>
+</body>
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}
+</html>

@@ -1,0 +1,1608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0128)https://ncore.cc/torrents.php?oldal=5&tipus=kivalasztottak_kozott&kivalasztott_tipus=xxx_xvid,xxx_hd&mire=julia%20ann&miben=name -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta http-equiv="Content-Language" content="hu">
+		<link rel="icon" href="https://static.ncore.cc/styles/ncore.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="https://static.ncore.cc/styles/ncore.ico" type="image/x-icon">
+		<link rel="stylesheet" href="./nCore _ Letöltés_files/style_sslv11.css" type="text/css">
+<!--		<link rel="alternate" href="/rss/rss.xml" type="application/rss+xml" title="nCORE Torrentek">-->
+<!--		<link rel="alternate" href="/rss/rssdd.xml" type="application/rss+xml" title="nCORE Torrentek Közvetlen Letöltéssel">-->
+        <link rel="alternate" href="https://ncore.cc/rss.php?key=76f13ee6d45f560dc71c6f8480ddc609" title="nCore Torrentek közvetlen letöltéssel">
+		<title>nCore | Letöltés</title>
+		<!--[if lt IE 7.]>
+		<script defer type="text/javascript" src="https://static.ncore.cc/static/js/pngfix.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="./nCore _ Letöltés_files/fancybox.css" type="text/css">
+		<script type="text/javascript" async="" src="./nCore _ Letöltés_files/dc.js"></script><script src="./nCore _ Letöltés_files/jquery.min.js"></script>
+		<script src="./nCore _ Letöltés_files/jquery-migrate.min.js"></script>
+		<script language="JavaScript" type="text/javascript" src="./nCore _ Letöltés_files/jquery_stuff2.js"></script>
+				<script language="JavaScript" type="text/javascript" src="./nCore _ Letöltés_files/ncorev12.js"></script>
+	</head>
+<body>
+<input type="hidden" id="confg" data-uid="692604" data-unique="2dedcebc2095f4a04255f530e1cb2c94">
+	<div style="position:fixed;left:10px;bottom:10px;z-index:2000;" id="ape-container"></div>
+	<script type="text/javaScript" src="./nCore _ Letöltés_files/push.js"></script>
+	<script type="text/javaScript">
+		var myCats = ["xvid_hun","xvid","dvd_hun","dvd","dvd9_hun","dvd9","hd_hun","hd","xvidser_hun","xvidser","dvdser_hun","dvdser","hdser_hun","hdser","xxx_xvid","xxx_dvd","xxx_imageset","xxx_hd","mp3_hun","mp3","lossless_hun","lossless","clip","game_iso","game_rip","console","ebook_hun","ebook","iso","misc","mobil"];
+		var catsName = {"xvid_hun":"Film SD\/HU","xvid":"Film SD\/EN","dvd_hun":"Film DVDR\/HU","dvd":"Film DVDR\/EN","dvd9_hun":"Film DVD9\/HU","dvd9":"Film DVD9\/EN","hd_hun":"Film HD\/HU","hd":"Film HD\/EN","xvidser_hun":"Sorozat SD\/HU","xvidser":"Sorozat SD\/EN","dvdser_hun":"Sorozat DVDR\/HU","dvdser":"Sorozat DVDR\/EN","hdser_hun":"Sorozat HD\/HU","hdser":"Sorozat HD\/EN","mp3_hun":"MP3\/HU","mp3":"MP3\/EN","lossless_hun":"Lossless\/HU","lossless":"Lossless\/EN","clip":"Klip","game_iso":"J\u00e1t\u00e9k PC\/ISO","game_rip":"J\u00e1t\u00e9k PC\/RIP","console":"Konzol","ebook_hun":"eBook\/HU","ebook":"eBook\/EN","iso":"APP\/ISO","misc":"APP\/RIP","mobil":"APP\/Mobil","xxx_xvid":"XXX SD","xxx_dvd":"XXX DVDR\/DVD9","xxx_imageset":"XXX Imageset","xxx_hd":"XXX HD"};
+		function stripslashes (str) {
+			return (str + '').replace(/\\(.?)/g, function (s, n1) {switch (n1){case '\\':return '\\';case '0':return '\u0000';case '':return '';default:return n1;}});
+		}
+		// <![CDATA[
+		function messageReceived(text, id, channel) {
+			var d=$.parseJSON(text);
+			var pid = d.id;
+			var pcat = d.cat;
+			var pname = stripslashes(decodeURIComponent(d.name));
+			pname = pname.replace(/\+/g," ",pname);
+			if($.inArray(pcat, myCats)>=0){
+				$("#ape-container").prepend('<div id="apeT'+pid+'" class="ape-popup"><span class="comment">Új torrent!</span><span onclick="$(\'#apeT'+pid+'\').fadeOut(\'slow\', function(){$(\'#apeT'+pid+'\').remove()});" class="ape-close">X</span><br /><a href="/torrents.php?action=details&id='+pid+'">' + pname + '</a><br /><span class="comment">' + catsName[pcat] + '</span></div>');
+				setInterval("$(\'#apeT"+pid+"\').fadeOut(\'slow\', function(){$(\'#apeT"+pid+"\').remove()});", 15000);
+			}
+		};
+		var pushstream = new PushStream({
+			host: 'push.ncore.cc',
+			port: window.location.port,
+			useSSL: true,
+			modes: "websocket|eventsource|longpolling",
+			longPollingByHeaders: false,
+			longPollingTagArgument: 'tag',
+			longPollingTimeArgument: 'time',
+			longPollingUseJSONP: false,
+			longPollingTimeout: 30000
+		});
+		pushstream.onmessage = messageReceived;
+		pushstream.addChannel('live_torrents');
+		pushstream.connect();
+
+		// ]]>
+	</script>
+<div id="container">
+	<div id="container_in">
+		<div id="div_body">
+			<div id="fej_csik_felso"></div>
+			<div id="fej_fejlec_bg"><div id="fej_fejlec"></div></div>
+			<div id="menu_bg">
+			<div id="menu_all">
+				<div id="menu_left"></div>
+				<div id="menu_center">
+								<a href="https://ncore.cc/index.php" title="Új hír!"><div class="topnews_alert">!</div></a>
+								<div class="menu_arrow"></div>
+				<div class="menu_text"><a href="https://ncore.cc/index.php" id="menu_1" class="menu_link">Főoldal</a></div>
+				<div class="menu_arrow"></div>
+				<div class="menu_text"><a href="https://ncore.cc/torrents.php" id="menu_2" class="menu_link">Letöltés</a></div>
+				<div class="menu_arrow"></div>
+				<div class="menu_text"><a href="https://ncore.cc/upload.php" id="menu_3" class="menu_link">Feltöltés</a></div>
+				<div class="menu_arrow"></div>
+				<div class="menu_text"><a href="https://ncore.cc/requests.php" id="menu_4" class="menu_link">Kérések</a></div>
+				<div class="menu_arrow"></div>
+				<div class="menu_text"><a href="https://ncore.cc/recommended.php" id="menu_5" class="menu_link">Ajánló</a></div>
+				<div class="menu_arrow"></div>
+				<div class="menu_text"><a href="https://ncore.cc/forum.php" id="menu_6" class="menu_link">Fórum</a></div>
+				<div class="menu_arrow"></div>
+				<div class="menu_text"><a href="https://ncore.cc/wiki.php" id="menu_7" class="menu_link">Wiki</a></div>
+				<div class="menu_arrow"></div>
+				<div class="menu_text"><a href="https://ncore.cc/users.php" id="menu_8" class="menu_link">Felhasználók</a></div>
+				<div class="menu_arrow"></div>
+				<div class="menu_text"><a href="https://ncore.cc/helpdesk.php" id="menu_9" class="menu_link">HelpDesk</a></div>
+								<div class="menu_arrow"></div>
+				<div class="menu_text"><a href="https://ncore.cc/exit.php?q=2dedcebc2095f4a04255f530e1cb2c94" id="menu_11" class="menu_link">Kilépés</a></div>
+			</div>
+			<div id="menu_right"></div>
+		</div>
+	</div>
+    <div id="infosav">
+		<div class="infosav_l"></div>
+		<div class="infosav_c">
+			<div id="infosav_adatok">
+				<a href="https://ncore.cc/profile.php">Endopsziche</a>
+												<img src="./nCore _ Letöltés_files/beer.png" width="12" height="11" border="0">
+												(Tag),
+				Pontok: <a href="https://ncore.cc/wiki.php?action=read&amp;id=33">6958</a>
+				Fel: <span class="list_alert">3.47 TB</span>
+				Helyezés:
+				<a class="list_alert" href="https://ncore.cc/wiki.php?action=read&amp;id=581">386872</a>.
+				[<a class="list_alert" href="https://ncore.cc/hitnrun.php">Aktivitás</a>]
+				[<a class="premium" href="https://ncore.cc/premium.php">Prémium</a>]
+
+			</div>
+			<div id="infosav_extra">
+																<div id="i_e_log"><a href="https://ncore.cc/log.php" title="Torrentek naplózása"><img src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="i_e_link"></a></div>
+								<div class="i_e_vonal"></div>
+				<div id="i_e_baratok"><a href="https://ncore.cc/profile.php?action=friends" title="Barátok"><img src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="i_e_link"></a></div>
+				<div class="i_e_vonal"></div>
+				<div id="i_e_konyvjelzo"><a id="konyvjelzo" href="https://ncore.cc/bookmarks.php" title="Könyvjelző"><img src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="i_e_link"></a></div>
+				<div class="i_e_vonal"></div>
+				<div id="i_e_beallitasok"><a href="https://ncore.cc/profile.php?action=config" title="Profil beállítása"><img src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="i_e_link"></a></div>
+				<div class="i_e_vonal"></div>
+				<div id="i_e_level"><a href="https://ncore.cc/inbox.php" title="Üzeneteim"><img src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="i_e_link"></a></div>
+								<div class="i_e_vonal"></div>
+				<div id="i_e_meghivo"><a href="https://ncore.cc/invite.php" title="Meghívó"><img src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="i_e_link"></a></div>
+			</div>
+		</div>
+		<div class="infosav_r"></div>
+    </div>
+	<div id="main_all">
+		<div id="main">
+        		<div class="infocsik" style="background:#BB0000;"><a href="https://ncore.cc/index.php" style="color:#fff;">Új hír van a főoldalon!</a> / <a href="https://ncore.cc/promo.php" style="color:#fff;">Új promóciós hír lett kiírva</a></div>
+		<div id="main_tartalom">
+
+<script type="text/javascript">
+	var ks=true;
+	$(document).ready(function() {
+		/*$("#upperad").load("http://yayo.hu/api/banner/900");*/
+//		$("#bottomad").load("http://yayo.hu/api/banner/900");
+		var inputFocused = false;
+		$('input').focusin(function() {
+			inputFocused = true;
+		});
+		$('input').focusout(function() {
+			inputFocused = false;
+		});
+		$(this).keydown(function(e) {
+			if($('#pPa').length > 0 && e.keyCode == 37 && ks && !inputFocused && $(document).scrollLeft() == 0) {
+				window.location = $('#pPa').attr('href');
+			} else if ($('#nPa').length > 0 && e.keyCode == 39 && ks && !inputFocused && ($(document).scrollLeft() + $(window).width()) == $(document).width()) {
+				window.location = $('#nPa').attr('href');
+			}
+		});
+	});
+	function fads() {
+		return '';
+	}
+	function disableKeys(){
+		ks=false;
+	}
+	function enableKeys(){
+		ks=true;
+	}
+	function torrent(id) {
+		var e = $('#'+id);
+		var loading = '<div class="torrent_lenyilo_lehetoseg"><div class="lehetosegek">Lehetőségeid:</div><div class="letoltve"><a href="torrents.php?action=download&id='+id+'&key=76f13ee6d45f560dc71c6f8480ddc609"><img src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="torr_reszletek_btn"></a></div><div class="letoltve_txt"><a href="torrents.php?action=download&id='+id+'&key=76f13ee6d45f560dc71c6f8480ddc609">Torrent letöltése</a></div></div><div class="torrent_lenyilo_tartalom"><div style="margin:10px 0;text-align:center"><img src="https://static.ncore.cc/styles/ajax.gif" title="Töltés..."></div></div><div class="torrent_lenyilo_lab"></div>';
+        if (!e.html() || e.html()==loading) {
+			e.html(loading);
+			e.toggle(0);
+			$.get('ajax.php?action=torrent_drop&id='+id,function(data) {e.html(data); BannerEventHandler.init();$('#'+id+' .fancy_groups').fancybox({'onStart':disableKeys,'onClosed':enableKeys,'type':'image'});});
+		} else
+			e.toggle(0);
+	}
+	function parosKlikk(id) {
+		return true;
+	}
+	function nCoreKep(cim, meretek) {
+		var url = cim;
+		var meret = meretek.split("x",2);
+		var width = ( (parseInt(meret[0])+25) > 455 ? (parseInt(meret[0])+25) : 455 );
+		var height = parseInt(meret[1])+170;
+		window.open('/showimage.php?link='+url,'_blank','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+width+', height='+height );
+	}
+	function keresestMutat(type) {
+		var dom_nyit = document.getElementById('panel_stuff');
+		var dom_resz = document.getElementById('kategoriak');
+		if (type==1) {
+			dom_nyit.className = "panel_closed";
+			dom_resz.style.display = "block";
+			return true;
+		}
+		dom_nyit.className = dom_nyit.className == "panel_closed" ? "panel_open" : "panel_closed" ;
+		dom_resz.style.display = dom_resz.style.display == "none" ? "block" : "none" ;
+		if (dom_resz.style.display == 'none') document.getElementById('cimkek_lista').style.display = 'none';
+	}
+	function lenyitKereso(id) {
+		var dom_lenyit = document.getElementById(id);
+		if (!dom_lenyit) return false;
+		dom_lenyit.style.display = dom_lenyit.style.display == "none" ? "block" : "none" ;
+		if (dom_lenyit.style.display == 'none') {
+			var inner_tags = dom_lenyit.getElementsByTagName('input');
+			for (i=0; i<inner_tags.length; i++) {
+				inner_tags[i].checked = false;
+			}
+		}
+	}
+	function markAll(id) {
+		var holder = document.getElementById(id);
+		if (!holder) return false;
+		var inner_tags = holder.getElementsByTagName('input');
+		for (i=0; i<inner_tags.length; i++) {
+			inner_tags[i].checked = inner_tags[i].checked==true?false:true;
+		}
+		tipust_valt();
+	}
+	function tipust_valt() {
+		var list = document.getElementById('listazasi_tipus');
+		list.selectedIndex = 2;
+	}
+	function nevHosszEllenorzes() {
+		if (document.kereses_mezo.mire.value && document.kereses_mezo.mire.value.length < 3) {
+			alert("FIGYELMEZTETÉS!\r\n\r\nA keresendő: '"+document.kereses_mezo.mire.value+"' rövidebb, mint 3 karakter hosszú!\r\n\r\nA keresés nem folytatódik, írj be hosszabb nevet!");
+			return false;
+		} else {
+			return true;
+		}
+	}
+	function showTags() {
+		if (document.getElementById('cimkek_lista').style.display == 'none') {
+			document.getElementById('cimkek_lista').style.display = '';
+			document.getElementById('cimke_text').innerHTML = '[címkék elrejtése]';
+		} else {
+			document.getElementById('cimkek_lista').style.display = 'none';
+			document.getElementById('cimke_text').innerHTML = '[címkék mutatása]';
+		}
+	}
+	function addTag(mit) {
+		var added = document.getElementById('tags').value.toLowerCase();
+		var matchRe = new RegExp(mit.toLowerCase());
+		if (matchRe.test(added)) return false;
+		document.getElementById('tags').value = document.getElementById('tags').value.replace(/,[ ]*$/, '');
+		document.getElementById('tags').value += (added?', ':'')+mit;
+		return true;
+	}
+</script>
+    <div class="fobox_all" id="torrents1">
+        <div class="fobox_fej_t"></div>
+        <div class="fobox_fej"><span id="torrents1_txt">Kereső &amp; Lapozó</span></div>
+        <div class="fobox_fej_b"></div>
+        <div class="fobox_tartalom_t"></div>
+        <div class="fobox_tartalom">
+	    <div style="display: block;" id="kategoriak">
+	<form method="post" action="https://ncore.cc/torrents.php" id="kereses_mezo" name="kereses_mezo" onsubmit="return nevHosszEllenorzes();" _lpchecked="1">
+		<table width="720" id="table_torrcat">
+			<tbody><tr>
+				<td width="20"><input type="checkbox" onclick="lenyitKereso(&#39;filmek_resz&#39;);" name="nyit_filmek_resz" value="true"></td>
+				<td width="60"><a href="https://ncore.cc/torrents.php?csoport_listazas=osszes_film">Film</a></td>
+				<td width="20"><input type="checkbox" onclick="lenyitKereso(&#39;sorozat_resz&#39;);" name="nyit_sorozat_resz" value="true"></td>
+				<td width="60"><a href="https://ncore.cc/torrents.php?csoport_listazas=osszes_sorozat">Sorozat</a></td>
+				<td width="20"><input type="checkbox" onclick="lenyitKereso(&#39;zene_resz&#39;);" name="nyit_zene_resz" value="true"></td>
+				<td width="60"><a href="https://ncore.cc/torrents.php?csoport_listazas=osszes_zene">Zene</a></td>
+				<td width="20"><input type="checkbox" onclick="lenyitKereso(&#39;xxx_resz&#39;);" name="nyit_xxx_resz" value="true" checked=""></td>
+				<td width="60"><a href="https://ncore.cc/torrents.php?csoport_listazas=osszes_xxx">XXX</a></td>
+				<td width="20"><input type="checkbox" onclick="lenyitKereso(&#39;jatek_resz&#39;);" name="nyit_jatek_resz" value="true"></td>
+				<td width="60"><a href="https://ncore.cc/torrents.php?csoport_listazas=osszes_jatek">Játék</a></td>
+				<td width="20"><input type="checkbox" onclick="lenyitKereso(&#39;prg_resz&#39;);" name="nyit_prog_resz" value="true"></td>
+				<td width="60"><a href="https://ncore.cc/torrents.php?csoport_listazas=osszes_program">Program</a></td>
+				<td width="20"><input type="checkbox" onclick="lenyitKereso(&#39;konyv_resz&#39;);" name="nyit_konyv_resz" value="true"></td>
+				<td width="60"><a href="https://ncore.cc/torrents.php?csoport_listazas=osszes_konyv">Könyv</a></td>
+			</tr>
+		</tbody></table>
+	<div style="display:none;width:840;" id="filmek_resz">
+	<table width="840" border="0" cellspacing="0" cellpadding="0">
+		<tbody><tr><td width="80"><a href="javascript:markAll(&#39;filmek_resz&#39;);">Film</a>:</td>
+		<td width="20"><input name="kivalasztott_tipus[]" id="check_xvid_hun" type="checkbox" onclick="tipust_valt();" value="xvid_hun"></td><td width="75"><a title="Filmek tömörített formátumban, magyarul." href="https://ncore.cc/torrents.php?tipus=xvid_hun">SD/HU</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_xvid" type="checkbox" onclick="tipust_valt();" value="xvid"></td><td width="75"><a title="Filmek tömörített formátumban, angolul." href="https://ncore.cc/torrents.php?tipus=xvid">SD/EN</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_dvd_hun" type="checkbox" onclick="tipust_valt();" value="dvd_hun"></td><td width="75"><a title="Filmek DVD-n, magyarul." href="https://ncore.cc/torrents.php?tipus=dvd_hun">DVDR/HU</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_dvd" type="checkbox" onclick="tipust_valt();" value="dvd"></td><td width="75"><a title="Filmek DVD-n, angolul." href="https://ncore.cc/torrents.php?tipus=dvd">DVDR/EN</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_dvd9_hun" type="checkbox" onclick="tipust_valt();" value="dvd9_hun"></td><td width="75"><a title="Filmek DVD9 formátumban magyarul." href="https://ncore.cc/torrents.php?tipus=dvd9_hun">DVD9/HU</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_dvd9" type="checkbox" onclick="tipust_valt();" value="dvd9"></td><td width="75"><a title="Filmek DVD9 formátumban angolul." href="https://ncore.cc/torrents.php?tipus=dvd9">DVD9/EN</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_hd_hun" type="checkbox" onclick="tipust_valt();" value="hd_hun"></td><td width="75"><a title="Nagyfelbontású filmek HD-n, magyarul." href="https://ncore.cc/torrents.php?tipus=hd_hun">HD/HU</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_hd" type="checkbox" onclick="tipust_valt();" value="hd"></td><td width="75"><a title="Nagyfelbontású filmek HD-n, angolul." href="https://ncore.cc/torrents.php?tipus=hd">HD/EN</a></td>	</tr></tbody></table></div>
+	<div style="display:none;width:840;" id="sorozat_resz">
+	<table width="840" border="0" cellspacing="0" cellpadding="0">
+		<tbody><tr><td width="80"><a href="javascript:void(0);" onclick="markAll(&#39;sorozat_resz&#39;);">Sorozat</a>:</td>
+		<td width="20"><input name="kivalasztott_tipus[]" id="check_xvidser_hun" type="checkbox" value="xvidser_hun" onclick="tipust_valt();"></td><td width="75"><a title="Sorozatok SD felbontásban magyarul." href="https://ncore.cc/torrents.php?tipus=xvidser_hun">SD/HU</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_xvidser" type="checkbox" value="xvidser" onclick="tipust_valt();"></td><td width="75"><a title="Sorozatok SD felbontásban angolul." href="https://ncore.cc/torrents.php?tipus=xvidser">SD/EN</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_dvdser_hun" type="checkbox" value="dvdser_hun" onclick="tipust_valt();"></td><td width="75"><a title="Sorozatok DVD-n magyarul." href="https://ncore.cc/torrents.php?tipus=dvdser_hun">DVDR/HU</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_dvdser" type="checkbox" value="dvdser" onclick="tipust_valt();"></td><td width="75"><a title="Sorozatok DVD-n angolul." href="https://ncore.cc/torrents.php?tipus=dvdser">DVDR/EN</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_hdser_hun" type="checkbox" value="hdser_hun" onclick="tipust_valt();"></td><td width="75"><a title="Nagyfelbontású sorozatok HD-n magyarul." href="https://ncore.cc/torrents.php?tipus=hdser_hun">HD/HU</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_hdser" type="checkbox" value="hdser" onclick="tipust_valt();"></td><td width="75"><a title="Nagyfelbontású sorozatok HD-n angolul." href="https://ncore.cc/torrents.php?tipus=hdser">HD/EN</a></td>		<td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td>
+	</tr></tbody></table></div>
+	<div style="display:none;width:840;" id="zene_resz">
+	<table width="840" border="0" cellspacing="0" cellpadding="0">
+		<tbody><tr><td width="80"><a href="javascript:void(0);" onclick="markAll(&#39;zene_resz&#39;);">Zene</a>:</td>
+		<td width="20"><input name="kivalasztott_tipus[]" id="check_mp3_hun" type="checkbox" value="mp3_hun" onclick="tipust_valt();"></td><td width="75"><a title="Zene magyar előadóktól (MP3)." href="https://ncore.cc/torrents.php?tipus=mp3_hun">MP3/HU</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_mp3" type="checkbox" value="mp3" onclick="tipust_valt();"></td><td width="75"><a title="Zene külföldi előadóktól (MP3)." href="https://ncore.cc/torrents.php?tipus=mp3">MP3/EN</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_lossless_hun" type="checkbox" value="lossless_hun" onclick="tipust_valt();"></td><td width="75"><a title="Lossless, azaz veszteségmentes formátumú zene magyar eloadótól (APE/FLAC/DTS/WAV)." href="https://ncore.cc/torrents.php?tipus=lossless_hun">Lossless/HU</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_lossless" type="checkbox" value="lossless" onclick="tipust_valt();"></td><td width="75"><a title="Lossless, azaz veszteségmentes formátumú zene külföldi eloadótól (APE/FLAC/DTS/WAV)." href="https://ncore.cc/torrents.php?tipus=lossless">Lossless/EN</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_clip" type="checkbox" value="clip" onclick="tipust_valt();"></td><td width="75"><a title="Koncertek, Zenei anyagok." href="https://ncore.cc/torrents.php?tipus=clip">Klip</a></td>		<td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td>
+	</tr></tbody></table></div>
+	<div style="display: block;" id="xxx_resz">
+	<table width="840" border="0" cellspacing="0" cellpadding="0">
+		<tbody><tr><td width="80"><a href="javascript:void(0);" onclick="markAll(&#39;xxx_resz&#39;);">XXX</a>:</td>
+		<td width="20"><input name="kivalasztott_tipus[]" id="check_xxx_xvid" type="checkbox" value="xxx_xvid" onclick="tipust_valt();" checked=""></td><td width="75"><a title="Erotikus tartalom." href="https://ncore.cc/torrents.php?tipus=xxx_xvid">SD</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_xxx_dvd" type="checkbox" value="xxx_dvd" onclick="tipust_valt();"></td><td width="75"><a title="Erotikus tartalom (DVD)." href="https://ncore.cc/torrents.php?tipus=xxx_dvd">DVDR</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_xxx_imageset" type="checkbox" value="xxx_imageset" onclick="tipust_valt();"></td><td width="75"><a title="Erotikus tartalom (Képsorozatok)." href="https://ncore.cc/torrents.php?tipus=xxx_imageset">Imageset</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_xxx_hd" type="checkbox" value="xxx_hd" onclick="tipust_valt();" checked=""></td><td width="75"><a title="Erotikus tartalom (HD)." href="https://ncore.cc/torrents.php?tipus=xxx_hd">HD</a></td>		<td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td>
+	</tr></tbody></table></div>
+	<div style="display:none;width:840;" id="jatek_resz">
+	<table width="840" border="0" cellspacing="0" cellpadding="0">
+		<tbody><tr><td width="80"><a href="javascript:void(0);" onclick="markAll(&#39;jatek_resz&#39;);">Játék</a>:</td>
+		<td width="20"><input name="kivalasztott_tipus[]" id="check_game_iso" type="checkbox" value="game_iso" onclick="tipust_valt();"></td><td width="75"><a title="Játékok CD/DVD képben." href="https://ncore.cc/torrents.php?tipus=game_iso">PC/ISO</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_game_rip" type="checkbox" value="game_rip" onclick="tipust_valt();"></td><td width="75"><a title="Játék RIP-ek, törések, egyéb." href="https://ncore.cc/torrents.php?tipus=game_rip">PC/RIP</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_console" type="checkbox" value="console" onclick="tipust_valt();"></td><td width="75"><a title="Játékok Xbox-ra, PS-re, PSP-re, GC-re, Wii-re." href="https://ncore.cc/torrents.php?tipus=console">Konzol</a></td>		<td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td>
+	</tr></tbody></table></div>
+	<div style="display:none;width:840;" id="prg_resz">
+	<table width="840" border="0" cellspacing="0" cellpadding="0">
+		<tbody><tr><td width="80"><a href="javascript:void(0);" onclick="markAll(&#39;prg_resz&#39;);">Program</a>:</td>
+		<td width="20"><input name="kivalasztott_tipus[]" id="check_iso" type="checkbox" value="iso" onclick="tipust_valt();"></td><td width="75"><a title="Szoftverek, programok CD/DVD képben." href="https://ncore.cc/torrents.php?tipus=iso">Prog/ISO</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_misc" type="checkbox" value="misc" onclick="tipust_valt();"></td><td width="75"><a title="Programok/Egyéb" href="https://ncore.cc/torrents.php?tipus=misc">Prog/RIP</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_mobil" type="checkbox" value="mobil" onclick="tipust_valt();"></td><td width="75"><a title="Programok és játékok mobilra." href="https://ncore.cc/torrents.php?tipus=mobil">Prog/Mobil</a></td>		<td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td><td width="20"></td>
+	</tr></tbody></table></div>
+	<div style="display:none;width:840;" id="konyv_resz">
+	<table width="840" border="0" cellspacing="0" cellpadding="0">
+		<tbody><tr><td width="80"><a href="javascript:void(0);" onclick="markAll(&#39;konyv_resz&#39;);">Könyv</a>:</td>
+		<td width="20"><input name="kivalasztott_tipus[]" id="check_ebook_hun" type="checkbox" value="ebook_hun" onclick="tipust_valt();"></td><td width="75"><a title="Könyvek, dokumentációk, tananyagok, eBook-ok magyarul." href="https://ncore.cc/torrents.php?tipus=ebook_hun">eBook/HU</a></td>		<td width="20"><input name="kivalasztott_tipus[]" id="check_ebook" type="checkbox" value="ebook" onclick="tipust_valt();"></td><td width="75"><a title="Könyvek, dokumentációk, tananyagok, eBook-ok angolul." href="https://ncore.cc/torrents.php?tipus=ebook">eBook/EN</a></td>		<td width="20"></td><td width="75"></td><td width="20"></td><td width="80"></td><td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td><td width="20"></td><td width="75"></td>
+	</tr></tbody></table></div>
+	<div class="hr_stuff"></div>
+	<center>
+	<table id="keresoresz" style="width: 700px">
+		<tbody><tr>
+		    <!--[if IE]>
+				<input type="submit" value="" style="height:0px;width:1px;border:none;background:transparent;">
+			<![endif]-->
+            <td width="80" style="text-align:left;">Keresés:</td>
+            <td width="150">
+				<input id="mire" type="text" name="mire" value="julia ann" class="keresesMezo">
+							</td>
+            <td width="20" style="text-align:center;"> - </td>
+            <td width="130">
+				<select name="miben" class="valasztasMezo" style="width:130px;">
+					<option value="name" selected="">Címben</option>
+					<option value="leiras">Leírásban</option>
+															<option value="cimke">Címke</option>
+				</select>
+			</td>
+			<td width="20" style="text-align:center;"> - </td>
+            <td width="130">
+				<select name="tipus" id="listazasi_tipus" class="valasztasMezo">
+					<option value="all_own">Összes saját típusban</option>
+					<option value="all">Összes típusban</option>
+					<option value="kivalasztottak_kozott" selected="">Kiválasztott típusokban</option>
+					<option value="legal">Legális torrentekben</option>
+					<option value="eredeti_releasekben">Eredeti release-ekben</option>
+																				<option value="all"></option>
+					<option value="xvid_hun">Film (HUN SD)</option>					<option value="xvid">Film (ENG SD)</option>					<option value="dvd_hun">Film (HUN DVD)</option>					<option value="dvd">Film (ENG DVD)</option>					<option value="dvd9_hun">Film (HUN DVD9)</option>					<option value="dvd9">Film (ENG DVD9)</option>					<option value="hd_hun">Film (HUN HD)</option>					<option value="hd">Film (ENG HD)</option>					<option value="xvidser_hun">Sorozat (HUN SD)</option>					<option value="xvidser">Sorozat (ENG SD)</option>					<option value="dvdser_hun">Sorozat (HUN DVD)</option>					<option value="dvdser">Sorozat (ENG DVD)</option>					<option value="hdser_hun">Sorozat (HUN HD)</option>					<option value="hdser">Sorozat (ENG HD)</option>					<option value="mp3_hun">Mp3 (HUN)</option>					<option value="mp3">Mp3 (ENG)</option>					<option value="lossless_hun">Lossless (HUN)</option>					<option value="lossless">Lossless (ENG)</option>					<option value="clip">Klip</option>					<option value="game_iso">Játék (ISO)</option>					<option value="game_rip">Játék (RIP)</option>					<option value="console">Konzol</option>					<option value="ebook_hun">e-Book (HUN)</option>					<option value="ebook">e-Book (ENG)</option>					<option value="iso">Program (ISO)</option>					<option value="misc">Program</option>					<option value="mobil">Mobil</option>					<option value="xxx_xvid">XXX (SD)</option>					<option value="xxx_dvd">XXX (DVD/DVD9)</option>					<option value="xxx_imageset">XXX (Imageset)</option>					<option value="xxx_hd">XXX (HD)</option>				</select>
+			</td>
+			<td width="100"></td>
+            <td width="100" align="center" style="padding-left:15px;"><input type="image" value="Ok" name="submit" class="g_mehet" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7"></td>
+		</tr>
+		<tr height="5">
+			<td colspan="8"></td>
+		</tr>
+		<tr>
+			<td width="80" style="text-align:left;">Címkék:  </td>
+            <td><input value="" type="text" id="tags" name="tags" class="keresesMezo" style="width:150px;"></td>
+			<td></td>
+			<td nowrap="" style="text-align:left;"><a href="javascript:void(0);" onclick="showTags();"><span id="cimke_text">[címkék mutatása]</span></a></td>
+			<td colspan="3"></td>
+			<td nowrap="" align="center" style="padding-left:15px;">
+				<a href="https://ncore.cc/torrents.php" style="padding-top:5px;">[feltételek törlése]</a>
+			</td>
+		</tr>
+	</tbody></table>
+	</center>
+	<div id="cimkek_lista" style="display:none;padding-left:0;text-align:left;">
+		<div class="hr_stuff"></div>
+			<center>
+			<table width="890" border="0" cellspacing="0" cellpadding="0" style="padding-top:5px;padding-bottom:5px;padding-left:10px;">
+			<tbody><tr height="20"><td align="left" colspan="7"><input type="checkbox" name="inverz_tags"> Inverz címkék (a kiválasztottak ne szerepeljenek)</td></tr>
+			<tr height="10"><td colspan="7"></td></tr>
+<tr height="20"><td align="left" colspan="7">Filmek:</td></tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;vígjáték&#39;);">vígjáték</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;dráma&#39;);">dráma</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;életrajz&#39;);">életrajz</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;akció&#39;);">akció</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;romantikus&#39;);">romantikus</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;dokumentumfilm&#39;);">dokumentumfilm</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;kaland&#39;);">kaland</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;animáció&#39;);">animáció</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;thriller&#39;);">thriller</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;családi&#39;);">családi</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;bűnügyi&#39;);">bűnügyi</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;rövidfilm&#39;);">rövidfilm</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;musical&#39;);">musical</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;sci-fi&#39;);">sci-fi</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;misztikus&#39;);">misztikus</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;háborús&#39;);">háborús</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;western&#39;);">western</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;horror&#39;);">horror</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;történelmi&#39;);">történelmi</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;sport&#39;);">sport</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;zene&#39;);">zene</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;ismeretterjesztő&#39;);">ismeretterjesztő</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;valóságshow&#39;);">valóságshow</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;3D&#39;);">3D</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;fantasy&#39;);">fantasy</a></td>
+</tr>
+<tr height="20"><td align="left" colspan="7">Zenék:</td></tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;60s&#39;);">60s</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;70s&#39;);">70s</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;80s&#39;);">80s</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;90s&#39;);">90s</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;alternative&#39;);">alternative</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;blues&#39;);">blues</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;breaks&#39;);">breaks</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;classical&#39;);">classical</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;country&#39;);">country</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;dance&#39;);">dance</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;drum.and.bass&#39;);">drum.and.bass</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;electronic&#39;);">electronic</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;folk&#39;);">folk</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;funk&#39;);">funk</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;garage&#39;);">garage</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;grunge&#39;);">grunge</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;hardcore&#39;);">hardcore</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;hardcore.dance&#39;);">hardcore.dance</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;hip.hop&#39;);">hip.hop</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;house&#39;);">house</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;industrial&#39;);">industrial</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;jazz&#39;);">jazz</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;metal&#39;);">metal</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;new.age&#39;);">new.age</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;ost&#39;);">ost</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;pop&#39;);">pop</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;pop.rock&#39;);">pop.rock</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;progressive.rock&#39;);">progressive.rock</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;psychedelic&#39;);">psychedelic</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;psytrance&#39;);">psytrance</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;punk&#39;);">punk</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;reggae&#39;);">reggae</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;rhythm.and.blues&#39;);">rhythm.and.blues</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;rock&#39;);">rock</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;ska&#39;);">ska</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;soul&#39;);">soul</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;techno&#39;);">techno</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;trance&#39;);">trance</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;trip.hop&#39;);">trip.hop</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;uk.garage&#39;);">uk.garage</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;world.music&#39;);">world.music</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;acid&#39;);">acid</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;emo&#39;);">emo</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;death.metal&#39;);">death.metal</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;disco&#39;);">disco</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;europop&#39;);">europop</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;goa.trance&#39;);">goa.trance</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;hardstyle&#39;);">hardstyle</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;indie.rock&#39;);">indie.rock</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;musical&#39;);">musical</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;progressive.house&#39;);">progressive.house</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;progressive.trance&#39;);">progressive.trance</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;italo.disco&#39;);">italo.disco</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;live&#39;);">live</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;dub&#39;);">dub</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;experimental&#39;);">experimental</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;ambient&#39;);">ambient</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;latin&#39;);">latin</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;synth.pop&#39;);">synth.pop</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;euro.house&#39;);">euro.house</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;eurodance&#39;);">eurodance</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;euro.disco&#39;);">euro.disco</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;dubstep&#39;);">dubstep</a></td>
+</tr>
+<tr height="20"><td align="left" colspan="7">Ebook:</td></tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;életmód.egészség&#39;);">életmód.egészség</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;erotika&#39;);">erotika</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;ezoterika&#39;);">ezoterika</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;gasztronómia&#39;);">gasztronómia</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;gyermek&#39;);">gyermek</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;hangoskönyv&#39;);">hangoskönyv</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;hobbi&#39;);">hobbi</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;irodalom&#39;);">irodalom</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;kert.és.lakás&#39;);">kert.és.lakás</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;lexikon.enciklopédia&#39;);">lexikon.enciklopédia</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;magazin&#39;);">magazin</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;manga.képregény&#39;);">manga.képregény</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;művészet&#39;);">művészet</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;pénz.befektetés.üzlet&#39;);">pénz.befektetés.üzlet</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;sport&#39;);">sport</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;szakkönyv&#39;);">szakkönyv</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;számítástechnika&#39;);">számítástechnika</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;szórakoztató.irodalom&#39;);">szórakoztató.irodalom</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;szótár.nyelvkönyv&#39;);">szótár.nyelvkönyv</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;tankönyv.segédkönyv&#39;);">tankönyv.segédkönyv</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;társadalomtudomány&#39;);">társadalomtudomány</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;természettudomány&#39;);">természettudomány</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;történelem&#39;);">történelem</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;utazás&#39;);">utazás</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;vallás&#39;);">vallás</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;zene&#39;);">zene</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;sci-fi&#39;);">sci-fi</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;fantasy&#39;);">fantasy</a></td>
+</tr>
+<tr>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;romantikus&#39;);">romantikus</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;hadászat&#39;);">hadászat</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;ismeretterjesztő&#39;);">ismeretterjesztő</a></td>
+<td align="left" width="14%"><a style="font-weight:normal;" href="javascript:void(0);" onclick="addTag(&#39;szépirodalom&#39;);">szépirodalom</a></td>
+</tr>
+			</tbody></table>
+		</center>
+	</div>
+</form>
+<div class="hr_stuff" id="letoltes_hr"></div>
+</div>
+<script type="text/javascript">
+lenyitKereso('xxx_resz');</script>
+<div onclick="if (document.getElementById(&#39;panel_stuff&#39;).className==&#39;panel_closed&#39;) {document.getElementById(&#39;kategoriak&#39;).style.display=&#39;block&#39;;document.getElementById(&#39;panel_stuff&#39;).className=&#39;panel_open&#39;;} else {document.getElementById(&#39;kategoriak&#39;).style.display=&#39;none&#39;;document.getElementById(&#39;panel_stuff&#39;).className=&#39;panel_closed&#39;;}" class="panel_open" id="panel_stuff"><a href="javascript:void(0)"></a></div>
+<div id="pager_top"><a href="https://ncore.cc/torrents.php?oldal=1&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>Első</strong></a> | <a href="https://ncore.cc/torrents.php?oldal=1&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>1-25</strong></a> | <a href="https://ncore.cc/torrents.php?oldal=2&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>26-50</strong></a> | <a href="https://ncore.cc/torrents.php?oldal=3&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>51-75</strong></a> | <a id="pPa" href="https://ncore.cc/torrents.php?oldal=4&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>76-100</strong></a> | <span class="active_link"><strong>101-125</strong></span> | <a id="nPa" href="https://ncore.cc/torrents.php?oldal=6&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>126-127</strong></a> | <a href="https://ncore.cc/torrents.php?oldal=6&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>Utolsó</strong></a></div>        </div>
+        <div class="fobox_lab"></div>
+    </div>
+    <script type="text/javascript">
+	keresestMutat()
+</script>
+<div class="lista_all">
+	<div class="lista_fej_t"></div>
+	<div class="lista_fej">Böngésző</div>
+	<div class="lista_fej_b"></div>
+		<div class="box_alcimek_all">
+			<div class="box_alap">
+			<table class="alcim">
+				<tbody><tr>
+				<td><div class="alcim_bal"></div></td>
+				<td><div class="box_tipus">Típus</div></td>
+				<td><div class="alcim_jobb"></div></td>
+				</tr>
+			</tbody></table>
+			</div>
+			<div class="box_alap">
+			<table class="alcim">
+				<tbody><tr>
+				<td><div class="alcim_bal"></div></td>
+				<td><div class="box_nev"><a href="https://ncore.cc/torrents.php?miszerint=name&amp;hogyan=DESC&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name">Név</a></div></td>
+				<td><div class="alcim_jobb"></div></td>
+				</tr>
+			</tbody></table>
+			</div>
+			<div class="box_alap">
+			<table class="alcim">
+				<tbody><tr>
+				<td><div class="alcim_bal"></div></td>
+				<td><div class="box_feltoltve"><a href="https://ncore.cc/torrents.php?miszerint=fid&amp;hogyan=DESC&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name">Feltöltve</a></div></td>
+				<td><div class="alcim_jobb"></div></td>
+				</tr>
+			</tbody></table>
+			</div>
+			<div class="box_alap">
+			<table class="alcim">
+				<tbody><tr>
+				<td><div class="alcim_bal"></div></td>
+				<td><div class="box_meret"><a href="https://ncore.cc/torrents.php?miszerint=size&amp;hogyan=DESC&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name">Méret</a></div></td>
+				<td><div class="alcim_jobb"></div></td>
+				</tr>
+			</tbody></table>
+			</div>
+			<div class="box_alap">
+			<table class="alcim">
+				<tbody><tr>
+				<td><div class="alcim_bal"></div></td>
+				<td><div class="box_d"><a href="https://ncore.cc/torrents.php?miszerint=times_completed&amp;hogyan=DESC&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name">D</a></div></td>
+				<td><div class="alcim_jobb"></div></td>
+				</tr>
+			</tbody></table>
+			</div>
+			<div class="box_alap">
+			<table class="alcim">
+				<tbody><tr>
+				<td><div class="alcim_bal"></div></td>
+				<td><div class="box_s"><a href="https://ncore.cc/torrents.php?miszerint=seeders&amp;hogyan=DESC&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name">S</a></div></td>
+				<td><div class="alcim_jobb"></div></td>
+				</tr>
+			</tbody></table>
+			</div>
+			<div class="box_alap">
+			<table class="alcim">
+				<tbody><tr>
+				<td><div class="alcim_bal"></div></td>
+				<td><div class="box_l"><a href="https://ncore.cc/torrents.php?miszerint=leechers&amp;hogyan=DESC&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name">L</a></div></td>
+				<td><div class="alcim_jobb"></div></td>
+				</tr>
+			</tbody></table>
+			</div>
+			<div class="box_alap_utolso">
+			<table class="alcim">
+				<tbody><tr>
+				<td><div class="alcim_bal"></div></td>
+				<td><div class="box_feltolto">Feltöltő</div></td>
+				<td><div class="alcim_jobb"></div></td>
+				</tr>
+			</tbody></table>
+			</div>
+		</div>
+		<div class="box_torrent_all">
+			<div style="clear:both;"></div>
+<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+		<div style="height: 159px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 478px; display: none;" id="borito1723383"><img src="./nCore _ Letöltés_files/vwBZ2krqhN3tzBNl" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1723383&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1723383" onclick="torrent(1723383); return false;" title="SeducedByACougar.15.01.06.Julia.Ann.XXX.1080p.MP4-KTR"><nobr>SeducedByACougar.15.01.06.Julia.Ann.XXX.1080p.MP4-KTR</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1723383&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/vwBZ2krqhN3tzBNl&#39;, &#39;159&#39;, &#39;borito1723383&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2015-01-06<br>08:22:09</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">2.67 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1723383&amp;peers=1#peers">2</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1723383&amp;peers=1#peers">1</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="display:none;" id="1723383"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy">
+		<div class="box_nev2">
+		<div style="height: 169px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 517px; display: none;" id="borito1708175"><img src="./nCore _ Letöltés_files/RGenN57RcopFOBwJ" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1708175&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1708175" onclick="torrent(1708175); return false;" title="MomsTeachSex.14.12.14.Julia.Ann.And.Sandra.Luberc.Doctors.Orders.XXX.1080p.MP4-SEXORS"><nobr>MomsTeachSex.14.12.14.Julia.Ann.And.Sandra.Luberc.Doctors.Orders....</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1708175&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/RGenN57RcopFOBwJ&#39;, &#39;169&#39;, &#39;borito1708175&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-12-14<br>18:06:46</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">2.26 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1708175&amp;peers=1#peers">3</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1708175&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo" style="display:none;" id="1708175"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+		<div style="height: 300px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 236px; display: none;" id="borito1701560"><img src="./nCore _ Letöltés_files/5neKRzoni37h9_A6" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1701560&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1701560" onclick="torrent(1701560); return false;" title="PervertCollege.14.12.05.Julia.Ann.XXX.1080p.MP4-KTR"><nobr>PervertCollege.14.12.05.Julia.Ann.XXX.1080p.MP4-KTR</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1701560&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/5neKRzoni37h9_A6&#39;, &#39;300&#39;, &#39;borito1701560&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-12-05<br>17:38:32</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">1.13 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1701560&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1701560&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="" id="1701560"><div class="torrent_lenyilo_lehetoseg">
+	<div class="lehetosegek">Lehetőségeid:</div>
+	<div class="letoltve">
+		<a href="https://ncore.cc/torrents.php?action=download&amp;id=1701560&amp;key=76f13ee6d45f560dc71c6f8480ddc609"><img class="torr_reszletek_btn" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7"></a>
+	</div>
+	<div class="letoltve_txt">
+		<a href="https://ncore.cc/torrents.php?action=download&amp;id=1701560&amp;key=76f13ee6d45f560dc71c6f8480ddc609">Letöltés</a>	</div>
+	<div class="download_separ"></div>
+	<div class="nfo">
+		<a href="javascript:void(0);" onclick="getNfo(&#39;ncoreajax1701560_nfo&#39;, &#39;1701560&#39;);"><img class="torr_reszletek_btn" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7"></a>
+	</div>
+	<div class="nfo_txt">
+		<a href="javascript:void(0);" onclick="getNfo(&#39;ncoreajax1701560_nfo&#39;, &#39;1701560&#39;);">NFO</a>
+	</div>
+	<div class="download_separ"></div>
+	<div class="t_details">
+		<a href="https://ncore.cc/torrents.php?action=details&amp;id=1701560"><img class="torr_reszletek_btn" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7"></a>
+	</div>
+	<div class="t_details_txt">
+		<a href="https://ncore.cc/torrents.php?action=details&amp;id=1701560">Részletek</a>
+	</div>
+	<div class="download_separ"></div>
+	<div class="t_comments">
+		<a href="https://ncore.cc/torrents.php?action=details&amp;id=1701560#comments"><img class="torr_reszletek_btn" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7"></a>
+	</div>
+	<div class="t_comments_txt">
+		<a href="https://ncore.cc/torrents.php?action=details&amp;id=1701560#comments">Hozzászólások (0)</a>
+	</div>
+	<div class="download_separ"></div>
+	<div class="fajlok">
+		<a href="javascript:void(0);" onclick="files(&#39;ncoreajax1701560_files&#39;, &#39;1701560&#39;);"><img class="torr_reszletek_btn" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7"></a>
+	</div>
+	<div class="fajlok_txt">
+		<a href="javascript:void(0);" onclick="files(&#39;ncoreajax1701560_files&#39;, &#39;1701560&#39;);">Fájlok (2)</a>
+	</div>
+        </div>
+<div class="torrent_lenyilo_tartalom">
+
+            <table class="torrent_kep_ico">
+                <tbody><tr>
+                    
+				<td class="kepmeret_ico">
+					<div class="torrent_kep_ico2">
+						<a class="fancy_groups" rel="g1701560" href="https://nc-img.cdn.l7cache.com/q-9BbyDL-HziwXmp">
+							<img class="attached_link" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7">
+						</a>
+					</div>
+				</td>
+				<td class="kepmeret_ico">
+					<div class="torrent_kep_ico2">
+						<a class="fancy_groups" rel="g1701560" href="https://nc-img.cdn.l7cache.com/5K94gv1n3iOCA4D2">
+							<img class="attached_link" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7">
+						</a>
+					</div>
+				</td>
+				<td class="kepmeret_ico">
+					<div class="torrent_kep_ico2">
+						<a class="fancy_groups" rel="g1701560" href="https://nc-img.cdn.l7cache.com/OPx4zvMQGiMf-ebM">
+							<img class="attached_link" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7">
+						</a>
+					</div>
+				</td>
+                </tr>
+                <tr>
+                    <td class="kepmeret_txt"><em>(1920x1080)</em></td><td class="kepmeret_txt"><em>(1920x1080)</em></td><td class="kepmeret_txt"><em>(1920x1080)</em></td>
+                </tr>
+            </tbody></table>
+            <div class="hr_stuff"></div>	<div align="center" id="ncoreajax1701560_subtitles"></div>
+	<div align="center" id="ncoreajax1701560_nfo"></div>
+	<div align="center" id="ncoreajax1701560_mafab"></div>
+	<div align="center" id="ncoreajax1701560_files"></div>
+Eredeti release!
+<br>
+<br>
+<br>
+<br><span style="font-weight:bold">Screens:</span>
+<br><div style="margin-top:5px;text-align:left;"><a href="javascript:void(0);" onclick="if (this.innerHTML==&#39;Spoiler megjelenítése&#39;) { this.innerHTML=&#39;Spoiler elrejtése&#39;;this.parentNode.nextSibling.childNodes[0].style.display=&#39;none&#39;;this.parentNode.nextSibling.childNodes[1].style.display=&#39;block&#39;;} else {this.innerHTML=&#39;Spoiler megjelenítése&#39;;this.parentNode.nextSibling.childNodes[0].style.display=&#39;block&#39;;this.parentNode.nextSibling.childNodes[1].style.display=&#39;none&#39;;}">Spoiler megjelenítése</a></div><div class="bb-quote"><div style="display: block;">... spoiler ...</div><div style="display: none;"><a href="https://dereferer.me/?http://keptarad.hu/viewer.php?file=xyd4qd6r25tfpks532wp.jpg" target="_blank" class="bb-url">http://keptarad.hu/viewer.php?file=xyd4qd6r25tfpks532wp.jpg</a></div></div>
+</div>
+<div class="torrent_lenyilo_lab"></div>
+</div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy">
+		<div class="box_nev2">
+		<div style="height: 162px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 815px; display: none;" id="borito1701349"><img src="./nCore _ Letöltés_files/K9_gv1qjFZduA_D2" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1701349&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1701349" onclick="torrent(1701349); return false;" title="WivesOnVacation.14.12.05.Ariella.Ferrera.And.Julia.Ann.XXX.1080p.MP4-KTR"><nobr>WivesOnVacation.14.12.05.Ariella.Ferrera.And.Julia.Ann.XXX.1080p....</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1701349&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/K9_gv1qjFZduA_D2&#39;, &#39;162&#39;, &#39;borito1701349&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-12-05<br>11:24:38</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">3.82 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1701349&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1701349&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo" style="display:none;" id="1701349"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+		<div style="height: 169px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 854px; display: none;" id="borito1694908"><img src="./nCore _ Letöltés_files/Ed_YPYLpHDrCLB-x" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1694908&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1694908" onclick="torrent(1694908); return false;" title="BigTitsAtWork.14.11.26.Julia.Ann.Work.Hard.Fuck.Harder.XXX.1080p.MP4-KTR"><nobr>BigTitsAtWork.14.11.26.Julia.Ann.Work.Hard.Fuck.Harder.XXX.1080p....</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1694908&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/Ed_YPYLpHDrCLB-x&#39;, &#39;169&#39;, &#39;borito1694908&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-11-26<br>07:44:41</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">2.58 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1694908&amp;peers=1#peers">1</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1694908&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="display:none;" id="1694908"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy">
+		<div class="box_nev2">
+		<div style="height: 165px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 893px; display: none;" id="borito1694347"><img src="./nCore _ Letöltés_files/1z_Po959H89HLBJn" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1694347&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1694347" onclick="torrent(1694347); return false;" title="MonstersOfCock.14.11.25.Julia.Ann.XXX.1080p.MP4-SEXORS"><nobr>MonstersOfCock.14.11.25.Julia.Ann.XXX.1080p.MP4-SEXORS</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1694347&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/1z_Po959H89HLBJn&#39;, &#39;165&#39;, &#39;borito1694347&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-11-25<br>11:33:41</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">1.04 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1694347&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1694347&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo" style="display:none;" id="1694347"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+					<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1694015&#39;);" class="torrent_konyvjelzo"></div>
+					<div class="torrent_txt2">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1694015" onclick="torrent(1694015); return false;" title="AssParade.14.11.24.Julianna.Vega.XXX.1080p.MP4-KTR"><nobr>AssParade.14.11.24.Julianna.Vega.XXX.1080p.MP4-KTR</nobr></a>
+											</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-11-24<br>23:24:24</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">1.07 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1694015&amp;peers=1#peers">1</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1694015&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="display:none;" id="1694015"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy">
+		<div class="box_nev2">
+		<div style="height: 162px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 789px; display: none;" id="borito1687004"><img src="./nCore _ Letöltés_files/-9_byq19T2vSwemp" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1687004&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1687004" onclick="torrent(1687004); return false;" title="StepmomVideos.14.11.14.Julianna.Vega.And.Mia.Khalifa.XXX.1080p.MP4-KTR"><nobr>StepmomVideos.14.11.14.Julianna.Vega.And.Mia.Khalifa.XXX.1080p.MP...</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1687004&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/-9_byq19T2vSwemp&#39;, &#39;162&#39;, &#39;borito1687004&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-11-15<br>06:16:25</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">1.04 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">+++++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1687004&amp;peers=1#peers">160</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1687004&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo" style="display:none;" id="1687004"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+		<div style="height: 220px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 770px; display: none;" id="borito1669563"><img src="./nCore _ Letöltés_files/jOXlP90JHd9FmBPY" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1669563&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1669563" onclick="torrent(1669563); return false;" title="MyDirtyMaid.14.10.18.Julianna.Vega.XXX.720p.MP4-KTR"><nobr>MyDirtyMaid.14.10.18.Julianna.Vega.XXX.720p.MP4-KTR</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1669563&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/jOXlP90JHd9FmBPY&#39;, &#39;220&#39;, &#39;borito1669563&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-10-20<br>18:11:38</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">1.39 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1669563&amp;peers=1#peers">5</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1669563&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="display:none;" id="1669563"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy">
+		<div class="box_nev2">
+		<div style="height: 169px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 860px; display: none;" id="borito1668062"><img src="./nCore _ Letöltés_files/yVXJ6-0EfR2foXZj" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1668062&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1668062" onclick="torrent(1668062); return false;" title="MyDirtyMaid.14.10.18.Julianna.Vega.XXX.1080p.MP4-KTR"><nobr>MyDirtyMaid.14.10.18.Julianna.Vega.XXX.1080p.MP4-KTR</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1668062&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/yVXJ6-0EfR2foXZj&#39;, &#39;169&#39;, &#39;borito1668062&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-10-18<br>16:52:57</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">2.07 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1668062&amp;peers=1#peers">11</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1668062&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo" style="display:none;" id="1668062"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+		<div style="display:none;" id="borito1658205"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1658205&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1658205" onclick="torrent(1658205); return false;" title="NaughtyWeddings.14.10.03.Julia.Ann.And.Nicole.Aniston.XXX.1080p.MP4-KTR"><nobr>NaughtyWeddings.14.10.03.Julia.Ann.And.Nicole.Aniston.XXX.1080p.M...</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1658205&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/K9BgvNlQuZduABD2&#39;, &#39;162&#39;, &#39;borito1658205&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-10-04<br>08:55:45</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">2.94 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1658205&amp;peers=1#peers">4</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1658205&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="display:none;" id="1658205"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy">
+		<div class="box_nev2">
+		<div style="height: 169px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 1127px; display: none;" id="borito1644584"><img src="./nCore _ Letöltés_files/-j4-K-lmaRdfz40v" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1644584&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1644584" onclick="torrent(1644584); return false;" title="FirstClassPOV.14.09.12.Julia.Ann.XXX.1080p.MP4-KTR"><nobr>FirstClassPOV.14.09.12.Julia.Ann.XXX.1080p.MP4-KTR</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1644584&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/-j4-K-lmaRdfz40v&#39;, &#39;169&#39;, &#39;borito1644584&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-09-12<br>16:22:59</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">978.69 MB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1644584&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1644584&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo" style="" id="1644584"><div class="torrent_lenyilo_lehetoseg">
+	<div class="lehetosegek">Lehetőségeid:</div>
+	<div class="letoltve">
+		<a href="https://ncore.cc/torrents.php?action=download&amp;id=1644584&amp;key=76f13ee6d45f560dc71c6f8480ddc609"><img class="torr_reszletek_btn" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7"></a>
+	</div>
+	<div class="letoltve_txt">
+		<a href="https://ncore.cc/torrents.php?action=download&amp;id=1644584&amp;key=76f13ee6d45f560dc71c6f8480ddc609">Letöltés</a>	</div>
+	<div class="download_separ"></div>
+	<div class="nfo">
+		<a href="javascript:void(0);" onclick="getNfo(&#39;ncoreajax1644584_nfo&#39;, &#39;1644584&#39;);"><img class="torr_reszletek_btn" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7"></a>
+	</div>
+	<div class="nfo_txt">
+		<a href="javascript:void(0);" onclick="getNfo(&#39;ncoreajax1644584_nfo&#39;, &#39;1644584&#39;);">NFO</a>
+	</div>
+	<div class="download_separ"></div>
+	<div class="t_details">
+		<a href="https://ncore.cc/torrents.php?action=details&amp;id=1644584"><img class="torr_reszletek_btn" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7"></a>
+	</div>
+	<div class="t_details_txt">
+		<a href="https://ncore.cc/torrents.php?action=details&amp;id=1644584">Részletek</a>
+	</div>
+	<div class="download_separ"></div>
+	<div class="t_comments">
+		<a href="https://ncore.cc/torrents.php?action=details&amp;id=1644584#comments"><img class="torr_reszletek_btn" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7"></a>
+	</div>
+	<div class="t_comments_txt">
+		<a href="https://ncore.cc/torrents.php?action=details&amp;id=1644584#comments">Hozzászólások (0)</a>
+	</div>
+	<div class="download_separ"></div>
+	<div class="fajlok">
+		<a href="javascript:void(0);" onclick="files(&#39;ncoreajax1644584_files&#39;, &#39;1644584&#39;);"><img class="torr_reszletek_btn" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7"></a>
+	</div>
+	<div class="fajlok_txt">
+		<a href="javascript:void(0);" onclick="files(&#39;ncoreajax1644584_files&#39;, &#39;1644584&#39;);">Fájlok (2)</a>
+	</div>
+        </div>
+<div class="torrent_lenyilo_tartalom">
+
+            <table class="torrent_kep_ico">
+                <tbody><tr>
+                    
+				<td class="kepmeret_ico">
+					<div class="torrent_kep_ico2">
+						<a class="fancy_groups" rel="g1644584" href="https://nc-img.cdn.l7cache.com/mDQ42K6lWagio4yW">
+							<img class="attached_link" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7">
+						</a>
+					</div>
+				</td>
+				<td class="kepmeret_ico">
+					<div class="torrent_kep_ico2">
+						<a class="fancy_groups" rel="g1644584" href="https://nc-img.cdn.l7cache.com/2lwBDj28yFvCrXN8">
+							<img class="attached_link" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7">
+						</a>
+					</div>
+				</td>
+				<td class="kepmeret_ico">
+					<div class="torrent_kep_ico2">
+						<a class="fancy_groups" rel="g1644584" href="https://nc-img.cdn.l7cache.com/Evj4N1V8PCRf-eNx">
+							<img class="attached_link" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7">
+						</a>
+					</div>
+				</td>
+                </tr>
+                <tr>
+                    <td class="kepmeret_txt"><em>(1920x1080)</em></td><td class="kepmeret_txt"><em>(1920x1080)</em></td><td class="kepmeret_txt"><em>(1920x1080)</em></td>
+                </tr>
+            </tbody></table>
+            <div class="hr_stuff"></div>	<div align="center" id="ncoreajax1644584_subtitles"></div>
+	<div align="center" id="ncoreajax1644584_nfo"></div>
+	<div align="center" id="ncoreajax1644584_mafab"></div>
+	<div align="center" id="ncoreajax1644584_files"></div>
+Eredeti release!
+<br>
+<br>
+<br>
+<br>FirstClassPOV.14.09.12.Julia.Ann.XXX.1080p.MP4-KTR
+<br>
+<br><div style="margin-top:5px;text-align:left;"><a href="javascript:void(0);" onclick="if (this.innerHTML==&#39;Spoiler megjelenítése&#39;) { this.innerHTML=&#39;Spoiler elrejtése&#39;;this.parentNode.nextSibling.childNodes[0].style.display=&#39;none&#39;;this.parentNode.nextSibling.childNodes[1].style.display=&#39;block&#39;;} else {this.innerHTML=&#39;Spoiler megjelenítése&#39;;this.parentNode.nextSibling.childNodes[0].style.display=&#39;block&#39;;this.parentNode.nextSibling.childNodes[1].style.display=&#39;none&#39;;}">Spoiler megjelenítése</a></div><div class="bb-quote"><div style="display: block;">... spoiler ...</div><div style="display: none;">
+			<table>
+				<tbody><tr>
+					<td><a href="http://imagerz.com/QBYQCktvAwMDA1oYFAVR" title="Csatolt kép megnyitása" target="_blank"><div class="description"></div></a></td>
+					<td><a href="http://imagerz.com/QBYQCktvAwMDA1oYFAVR" title="Csatolt kép megnyitása" target="_blank">Csatolt kép megnyitása</a></td>
+				</tr>
+			</tbody></table></div></div>
+</div>
+<div class="torrent_lenyilo_lab"></div>
+</div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+					<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1642195&#39;);" class="torrent_konyvjelzo"></div>
+					<div class="torrent_txt2">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1642195" onclick="torrent(1642195); return false;" title="MomsBangTeens.14.09.08.Julia.Ann.And.Natalia.Starr.Do.It.To.It.XXX.1080p.MP4-KTR"><nobr>MomsBangTeens.14.09.08.Julia.Ann.And.Natalia.Starr.Do.It.To.It.XX...</nobr></a>
+											</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-09-08<br>07:03:43</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">2.62 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1642195&amp;peers=1#peers">2</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1642195&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="display:none;" id="1642195"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy">
+		<div class="box_nev2">
+		<div style="height: 168px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 1248px; display: none;" id="borito1616651"><img src="./nCore _ Letöltés_files/YQXdmKwVUxmFbeVg" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1616651&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1616651" onclick="torrent(1616651); return false;" title="PornstarTease.14.07.29.Julia.Ann.XXX.1080p.MP4-KTR"><nobr>PornstarTease.14.07.29.Julia.Ann.XXX.1080p.MP4-KTR</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1616651&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/YQXdmKwVUxmFbeVg&#39;, &#39;168&#39;, &#39;borito1616651&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-07-29<br>11:25:10</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">372.5 MB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1616651&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1616651&amp;peers=1#peers">1</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo" style="display:none;" id="1616651"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+		<div style="height: 200px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 1255px; display: none;" id="borito1607456"><img src="./nCore _ Letöltés_files/7k_jGY1DCAwS2_wD" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1607456&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1607456" onclick="torrent(1607456); return false;" title="MyFirstSexTeacher.14.07.03.Julia.Ann.XXX.1080p.MP4-KTR"><nobr>MyFirstSexTeacher.14.07.03.Julia.Ann.XXX.1080p.MP4-KTR</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1607456&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/7k_jGY1DCAwS2_wD&#39;, &#39;200&#39;, &#39;borito1607456&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-07-16<br>16:18:21</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">3.69 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1607456&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1607456&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="display:none;" id="1607456"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy">
+		<div class="box_nev2">
+		<div style="height: 300px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 1194px; display: none;" id="borito1606889"><img src="./nCore _ Letöltés_files/ZVe3m0Z7IGkHwBpM" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1606889&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1606889" onclick="torrent(1606889); return false;" title="MyFriendsHotMom.14.07.09.Julia.Ann.XXX.1080p.MP4-SEXORS"><nobr>MyFriendsHotMom.14.07.09.Julia.Ann.XXX.1080p.MP4-SEXORS</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1606889&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/ZVe3m0Z7IGkHwBpM&#39;, &#39;300&#39;, &#39;borito1606889&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-07-15<br>19:10:04</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">2.99 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1606889&amp;peers=1#peers">1</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1606889&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo" style="display:none;" id="1606889"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+					<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1552153&#39;);" class="torrent_konyvjelzo"></div>
+					<div class="torrent_txt2">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1552153" onclick="torrent(1552153); return false;" title="IntimateLesbians.14.01.25.Jessica.Jaymes.And.Julia.Ann.XXX.1080p.MP4-KTR"><nobr>IntimateLesbians.14.01.25.Jessica.Jaymes.And.Julia.Ann.XXX.1080p....</nobr></a>
+											</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-05-01<br>04:00:07</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">804.88 MB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1552153&amp;peers=1#peers">6</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1552153&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="display:none;" id="1552153"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy">
+		<div class="box_nev2">
+		<div style="height: 200px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 1372px; display: none;" id="borito1492530"><img src="./nCore _ Letöltés_files/vjBNREdghRyf-_Nx" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1492530&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1492530" onclick="torrent(1492530); return false;" title="DirtyWivesClub.14.02.13.Julia.Ann.And.Bill.Bailey.XXX.1080P.X264-TBP"><nobr>DirtyWivesClub.14.02.13.Julia.Ann.And.Bill.Bailey.XXX.1080P.X264-...</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1492530&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/vjBNREdghRyf-_Nx&#39;, &#39;200&#39;, &#39;borito1492530&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-02-16<br>13:59:37</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">1.56 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1492530&amp;peers=1#peers">2</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1492530&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo" style="display:none;" id="1492530"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_xvid"><img src="./nCore _ Letöltés_files/ico_xxx_xvid.gif" class="categ_link" alt="SD" title="Erotikus tartalom."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+		<div style="display:none;" id="borito1459302"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1459302&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1459302" onclick="torrent(1459302); return false;" title="BlackAttackGangBang.13.09.18.Juliann.More.XXX.MP4-YAPG"><nobr>BlackAttackGangBang.13.09.18.Juliann.More.XXX.MP4-YAPG</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1459302&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/7YBQ1YDjhkxFNXdn&#39;, &#39;225&#39;, &#39;borito1459302&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2014-01-03<br>23:59:09</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">457.34 MB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1459302&amp;peers=1#peers">2</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1459302&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="display:none;" id="1459302"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy">
+		<div class="box_nev2">
+		<div style="height: 162px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 1488px; display: none;" id="borito1414789"><img src="./nCore _ Letöltés_files/ZVe3No2RFGkHw_pM" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1414789&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1414789" onclick="torrent(1414789); return false;" title="MyFriendsHotMom.13.11.08.Julia.Ann.XXX.1080p.MP4-KTR"><nobr>MyFriendsHotMom.13.11.08.Julia.Ann.XXX.1080p.MP4-KTR</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1414789&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/ZVe3No2RFGkHw_pM&#39;, &#39;162&#39;, &#39;borito1414789&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2013-11-08<br>10:31:15</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">963.7 MB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1414789&amp;peers=1#peers">1</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1414789&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo" style="display:none;" id="1414789"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_xvid"><img src="./nCore _ Letöltés_files/ico_xxx_xvid.gif" class="categ_link" alt="SD" title="Erotikus tartalom."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+		<div style="height: 168px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 1521px; display: none;" id="borito1403800"><img src="./nCore _ Letöltés_files/7D4rk1Y2TbnC7_vV" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1403800&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1403800" onclick="torrent(1403800); return false;" title="HDPorn.13.10.26.Julia.Ann.Raylene.Coolio54"><nobr>HDPorn.13.10.26.Julia.Ann.Raylene.Coolio54</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1403800&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/7D4rk1Y2TbnC7_vV&#39;, &#39;168&#39;, &#39;borito1403800&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2013-10-26<br>13:02:10</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">312.78 MB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1403800&amp;peers=1#peers">4</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1403800&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="display:none;" id="1403800"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy">
+		<div class="box_nev2">
+		<div style="height: 199px; position: absolute; left: 368.5px; background-color: rgb(255, 255, 255); padding: 6px; z-index: 100; top: 1529px; display: none;" id="borito1403069"><img src="./nCore _ Letöltés_files/o0_5plQwioAFKX5y" alt="Töltés"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1403069&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1403069" onclick="torrent(1403069); return false;" title="HDPorn.13.10.25.Lisa.Ann.Julia.Ann.720p.Coolio54"><nobr>HDPorn.13.10.25.Lisa.Ann.Julia.Ann.720p.Coolio54</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1403069&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/o0_5plQwioAFKX5y&#39;, &#39;199&#39;, &#39;borito1403069&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2013-10-25<br>13:43:01</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">708.84 MB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1403069&amp;peers=1#peers">4</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1403069&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo" style="display:none;" id="1403069"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+					<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1364565&#39;);" class="torrent_konyvjelzo"></div>
+					<div class="torrent_txt2">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1364565" onclick="torrent(1364565); return false;" title="MyFirstSexTeacher.13.09.03.Brooke.Banner.And.Julia.Ann.Remastered.XXX.1080p.MP4-OHRLY"><nobr>MyFirstSexTeacher.13.09.03.Brooke.Banner.And.Julia.Ann.Remastered...</nobr></a>
+											</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2013-09-03<br>20:37:56</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">748.25 MB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1364565&amp;peers=1#peers">3</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1364565&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="display:none;" id="1364565"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy">
+		<div class="box_nev2">
+		<div style="display:none;" id="borito1347028"></div>			<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1347028&#39;);" class="torrent_konyvjelzo2"></div>
+					<div class="torrent_txt">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1347028" onclick="torrent(1347028); return false;" title="MyGirlLovesAnal.13.08.09.Julia.Ann.XXX.1080p.MP4-KTR"><nobr>MyGirlLovesAnal.13.08.09.Julia.Ann.XXX.1080p.MP4-KTR</nobr></a>
+						<div class="torrent_txt_also"><div class="infobar"><img onmouseout="elrejt(&#39;borito1347028&#39;)" onmouseover="mutat(&#39;https://nc-img.cdn.l7cache.com/covers/DQB2bJ21h69ioXyW&#39;, &#39;300&#39;, &#39;borito1347028&#39;, this)" border="0" src="data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAAPAA8AAAINlI+py+0Po5y02otnAQA7" class="infobar_ico"></div></div>					</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2013-08-09<br>13:47:57</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">1.36 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1347028&amp;peers=1#peers">4</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1347028&amp;peers=1#peers">0</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo" style="display:none;" id="1347028"></div>
+	<div style="clear:both;"></div>
+	<div class="box_torrent">
+	<div class="box_alap_img">
+		<a href="https://ncore.cc/torrents.php?tipus=xxx_hd"><img src="./nCore _ Letöltés_files/ico_xxx_hd.gif" class="categ_link" alt="HD" title="Erotikus tartalom (HD)."></a>
+	</div>
+	<div class="box_nagy2">
+		<div class="box_nev2">
+					<div class="tabla_szoveg">
+				<div style="cursor:pointer" onclick="konyvjelzo(&#39;1150622&#39;);" class="torrent_konyvjelzo"></div>
+					<div class="torrent_txt2">
+						<a href="https://ncore.cc/torrents.php?action=details&amp;id=1150622" onclick="torrent(1150622); return false;" title="Brazzers.com.Julia.Ann.Jenna.Presley.Jessica.Jaymes.Kirsten.Price.Office.4-play.IV.XXX.MP4.720p-anul"><nobr>Brazzers.com.Julia.Ann.Jenna.Presley.Jessica.Jaymes.Kirsten.Price...</nobr></a>
+											</div>
+				</div>
+
+				<div class="torrent_ok" title="A torrent megfelel a szabályoknak"></div>			</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltoltve2">2012-11-30<br>06:03:09</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_meret2">1.85 GB</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_d2">++</div>
+			<div class="users_box_sepa"></div>
+			<div class="box_s2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1150622&amp;peers=1#peers">7</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_l2"><a class="torrent" href="https://ncore.cc/torrents.php?action=details&amp;id=1150622&amp;peers=1#peers">3</a></div>
+			<div class="users_box_sepa"></div>
+			<div class="box_feltolto2"><a href="https://ncore.cc/wiki.php?action=read&amp;id=391"><span class="feltolto_szin">Anonymous</span></a></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="torrent_lenyilo2" style="display:none;" id="1150622"></div>
+	<div style="clear:both;"></div>
+		</div>
+<div class="lista_lab"></div>
+</div>
+<div style="clear:both;"></div>    <div class="fobox_all" id="torrents2">
+        <div class="fobox_fej_t"></div>
+        <div class="fobox_fej">Lapozó</div>
+        <div class="fobox_fej_b"></div>
+        <div class="fobox_tartalom_t"></div>
+        <div class="fobox_tartalom">
+	    <div id="pager_bottom"><a href="https://ncore.cc/torrents.php?oldal=1&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>Első</strong></a> | <a href="https://ncore.cc/torrents.php?oldal=1&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>1-25</strong></a> | <a href="https://ncore.cc/torrents.php?oldal=2&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>26-50</strong></a> | <a href="https://ncore.cc/torrents.php?oldal=3&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>51-75</strong></a> | <a id="pPa" href="https://ncore.cc/torrents.php?oldal=4&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>76-100</strong></a> | <span class="active_link"><strong>101-125</strong></span> | <a id="nPa" href="https://ncore.cc/torrents.php?oldal=6&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>126-127</strong></a> | <a href="https://ncore.cc/torrents.php?oldal=6&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name"><strong>Utolsó</strong></a></div>
+        </div>
+        <div class="fobox_lab"></div>
+    </div>
+    <div class="text-ad-links" style="height: 1px;"></div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        setTimeout(function(){
+            var adblock_test = true;
+            if($('.text-ad-links:visible').height()){
+                adblock_test = false;
+            }
+            set_cookie('adblock_tested', adblock_test);
+            
+        }, 1000);
+    });
+</script>
+
+    </div>
+    </div>
+    </div>
+    <div id="div_body_space"></div>
+    </div>
+    <div id="footer_bg">
+        <div id="footer">
+    	<div id="footer_left">
+		                    		<a href="https://ncore.cc/torrents.php?oldal=5&amp;tipus=kivalasztottak_kozott&amp;kivalasztott_tipus=xxx_xvid,xxx_hd&amp;mire=julia%20ann&amp;miben=name#"></a>
+	</div>
+    	<div id="footer_center">nCore bxsv9c9695f | render: 46 ms | mem: 2 MB | load: 2.84 3.14 2.99</div>
+    	<div id="footer_right"></div>
+        </div>
+    </div>
+        <script language="JavaScript" type="text/javascript" src="./nCore _ Letöltés_files/ieupdate.js"></script>
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-2914855-1']);
+		  _gaq.push(['_setSampleRate', '10']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+    
+    
+    </div></div><div id="fancybox-tmp" style="padding: 50px;"></div><div id="fancybox-loading" style="display: none;"><div></div></div><div id="fancybox-overlay" style="background-color: rgb(119, 119, 119); opacity: 0; cursor: pointer; height: 2067px; display: none;"></div><div id="fancybox-wrap" style="width: 1257px; height: auto; top: 497px; left: 144px; display: none;"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content" style="border-width: 10px; width: 1237px; height: 696px; opacity: 1;"></div><a id="fancybox-close" style="display: none;"></a><div id="fancybox-title" style="display: none;"></div><a href="javascript:;" id="fancybox-left" style="display: none;"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right" style="display: none;"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div></body></html>

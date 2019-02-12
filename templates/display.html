@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Display a Question</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='stylesheets/script.js') }}" defer></script>
+    <link rel="icon" href="{{ url_for('static', filename='stylesheets/teamlogo.jpeg') }}" type="image/gif"
+          sizes="16x16">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+          integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+</head>
+<body>
+{% block content %}
+    <div class="topnav">
+        <a href="{{ url_for("index") }}">Home Page</a>
+        <a href="{{ url_for('list') }}">List all of the questions</a>
+        <a href='/ask-question' style="text-decoration: none">Ask a question</a>
+        <form action="{{ url_for("search") }}" method="GET">
+            <input type="text" name="search" placeholder="Search..">
+        </form>
+    </div>
+    {% for question in questions %}
+        <h1>{{ question["title"] }}</h1>
+    {% endfor %}
+    <br>
+    <h2>Comments:</h2>
+    {% for line in questions %}
+        <p align="center"><a class="button"
+                             href="{{ url_for('add_comment_to_question', question_id = line["id"]) }}">
+            Comment here on a question</a></p>
+    {% endfor %}
+
+    {% for line in comment_to_question %}
+
+        <p class="comment" align="center" style="text-decoration: underline;"><em>{{ line.message }}</em></p>
+        <table align="center">
+
+            <tr>
+                <td>Submission time</td>
+                <td>Times edited</td>
+            </tr>
+            <tr>
+                <td>{{ line.submission_time }}</td>
+                <td>{{ line.edited_count }}</td>
+                <td>
+                    {% for comment_id in comment_to_question %}
+                        <div id="button">
+                            <form action='{{ url_for('delete_comment', question_id=comment_id['question_id']) }}'
+                                  method="post">
+                                <button style="font-size:24px"><i class="fas fa-trash-alt"></i></button>
+                            </form>
+                        </div>
+                    {% endfor %}
+                </td>
+            </tr>
+
+
+        </table>
+
+
+    {% endfor %}
+    <br>
+    <table>
+        <tr>
+            {% for line in header %}
+                <th>{{ line }}</th>
+            {% endfor %}
+        </tr>
+        {% for line in questions %}
+            <tr>
+                {#                <td>{{ line['id'] }}</td>#}
+                <td>{{ line['submission_time'] }}</td>
+                {#                <td>{{ line['view_number'] }}</td>#}
+                {#                <td>{{ line['vote_number'] }}#}
+                <td>{{ line['title'] }}</td>
+                <td>{{ line['message'] }}</td>
+
+            </tr>
+        {% endfor %}
+        <br><br>
+    </table>
+    <br><br>
+    <div style="text-align:center;">
+        <h3>Answer</h3>
+    </div>
+    <table>
+        <tr>
+            {% for line in answers_header %}
+                <th>{{ line }}</th>
+            {% endfor %}
+        </tr>
+        {% for answer in answers %}
+            <tr>
+                <td>{{ answer["id"] }}</td>
+                <td>{{ answer["submission_time"] }}</td>
+                <td>{{ answer['question_id'] }}</td>
+                <td>{{ answer['message'] }}</td>
+                <td>{{ answer['image'] }}</td>
+                <td>
+                    <div id="button">
+                        <a href='/update/{{ answer["id"] }}/edit' class="button" style="text-decoration:none"> Edit</a>
+                        <br>
+                    </div>
+                </td>
+                <td>
+                    <div id="button">
+                        <a href='/answer/{{ answer['id'] }}/new-comment' class="button" style="text-decoration:none">Add
+                            Comment</a>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Comments:
+                    {% for row in comments %}
+                        {% for comment in row %}
+                            {% if comment['answer_id'] == answer['id'] %}
+                                <br>{{ comment['message'] }}
+                                <form action='/comments/{{ comment['id'] }}/edit'>
+                                    <input type="hidden" name="question_id" value="{{ comment['question_id'] }}">
+                                    <input type="submit" class="button" value="Edit">
+                                </form>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <br>
+    {% for line in questions %}
+        <div style="text-align:center;">
+        <a href='/question/{{ line['id'] }}/new-answer' class="button" style="text-decoration: none">Add New Answer</a>
+    {% endfor %}
+</div>
+    <br><br>
+    <div style="text-align:center;">
+        <a href="{{ url_for("index") }}" class="button" style="text-decoration: none">Back to Question</a>
+    </div>
+{% endblock %}
+</body>
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}
+</html>

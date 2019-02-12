@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='stylesheets/script.js') }}" defer></script>
+    <link rel="icon" href="{{ url_for('static', filename='stylesheets/teamlogo.jpeg') }}" type="image/gif"
+          sizes="16x16">
+
+</head>
+<body>
+{% block content %}
+    <div style="text-align:center;">
+        {% for line in answer %}
+            <form action='{{ url_for('update_answer', id = line['id']) }}' method="POST">
+                {#        <form action='/update/{{answer['id']}}/edit' method="POST">#}
+                <label for="question_title">Edit</label>
+                <br>
+                <textarea id="text" name="message" rows="5" cols="30">{{ line["message"] }}</textarea>
+                <br>
+                <input type="text" name="image" value="{{ line["image"] }}">
+                <input type="text" name="question_id" value='{{ line["question_id"] }}' hidden>
+                <br>
+                <br><br>
+                <br>
+                <br><br>
+                <br>
+                <br>
+                <input class="button" type=submit value="Submit">
+                <br><br>
+            </form>
+            <a href='/question/{{ line["question_id"] }}' class="button" style="text-decoration: none">Back tome
+                question</a>
+            </div>
+        {% endfor %}
+    <br>
+{% endblock %}
+</body>
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}
+</html>

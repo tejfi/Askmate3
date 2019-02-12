@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='stylesheets/script.js') }}" defer></script>
+    <link  rel="icon" href="{{ url_for('static', filename='stylesheets/teamlogo.jpeg')}}" type="image/gif" sizes="16x16">
+
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>Add Answer</title>
+    {% endblock %}
+</head>
+<body>
+<div style="text-align:center;">
+    <form action="/question/{{ question_id }}/new-answer" method="POST">
+        <h1><label for="add_answer">Add answer to question:</label></h1>
+        <br>
+        <input type="text" name="vote_number" value="1" hidden>
+        <input type="text" name="question_id" value="{{ question["id"] }}" hidden>
+        <textarea id="message" name="message" rows="8" cols="80"></textarea>
+        <input type="text" name="image" value="img/answer.jpg" hidden>
+        <br><br>
+        <br><br>
+{#        <enctype = "multipart/form-data">#}
+{#        <input type = "file" name = "file"  accept="image/*"/>#}
+        <br><br>
+        <br>
+        <input class=" button " type=submit value="Submit">
+        <br><br>
+        <a href='/question/{{ question_id }}' class="button" style="text-decoration: none">Back to the Question</a>
+</div>
+</form>
+
+</body>
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}
+</html>
