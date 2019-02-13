@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def index():
     questions = data_handler.get_latest_questions()
     header = data_handler.get_header()
@@ -145,6 +145,20 @@ def edit_answer_comment(comment_id):
     comment = data_handler.get_comment_by_id(comment_id)
     print(comment)
     return render_template('edit_answer_comments.html', id=question_id, comment=comment)
+
+@app.route('/registration', methods=['GET', 'POST'])
+def registration():
+    if request.method == 'POST':
+        user_name = request.form.get('user_name')
+        password = request.form.get('password')
+        hashed_password = data_handler.hash_password(password)
+        existing_user_names = data_handler.get_all_user_names()
+        data_handler.add_new_user(user_name, hashed_password)
+
+
+        return redirect(url_for('index'))
+
+    return render_template('registration.html')
 
 
 
