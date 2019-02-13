@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% include "login.html" %}
     <script
             src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -8,7 +9,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
     <script type="text/javascript" src="{{ url_for('static',filename='stylesheets/script.js') }}" defer></script>
     <meta charset="UTF-8">
-    <link  rel="icon" href="{{ url_for('static', filename='stylesheets/teamlogo.jpeg')}}" type="image/gif" sizes="16x16">
+    <link rel="icon" href="{{ url_for('static', filename='stylesheets/teamlogo.jpeg') }}" type="image/gif"
+          sizes="16x16">
     <title>AskMate</title>
 
 </head>
@@ -20,10 +22,17 @@
         <a href="{{ url_for('list') }}">List all of the questions</a>
         <a href='/ask-question' style="text-decoration: none">Ask a question</a>
         <a href="{{ url_for('registration') }}">Registration</a>
+        {% if logged_in is not defined %}
+            <button type="button" class="primary" data-toggle="modal" data-target="#exampleModal"
+                    data-whatever="username">Login
+            </button>
+        {% endif %}
+    {{ logged_in }}
         <form action="{{ url_for("search") }}" method="GET">
             <input type="text" name="search" placeholder="Search..">
         </form>
     </div>
+    {% if logged_in %}
     <table>
         <tr>
             <th>ID</th>
@@ -47,8 +56,7 @@
             </tr>
         {% endfor %}
     </table>
-
-
+    {% endif %}
 {% endblock %}
 </body>
 {% block footer %}
