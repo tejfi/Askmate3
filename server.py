@@ -1,8 +1,24 @@
-from flask import Flask, render_template, request, redirect, url_for
-import data_handler
+from flask import Flask, render_template, request, redirect, session,escape, url_for
+from flask_bootstrap import Bootstrap
+import data_handler, os ,bcrypt
 
 app = Flask(__name__)
+app.secret_key = os.urandom(16)
+Bootstrap(app)
 app.config['DEBUG'] = True
+
+
+@app.route('/logged_in', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        session['user_name'] = request.form.get('user_name')
+        plain_text_password = request.form.get("password")
+        questions = data_handler.get_latest_questions()
+        hashed_password = data_handler.get_password_by_user(session['user_name'])
+        verify = data_handler.verify_password(plain_text_password, hashed_password["password"])
+        if 'user_name' in session and verify:
+            logged_in = 'Logged in as %s' % escape(session['user_name'])
+        return render_template("index.html", logged_in=logged_in, questions=questions)
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -60,7 +76,8 @@ def display_question(id):
     for answer in answers:
         comments.append(data_handler.get_comments_by_answer_id(answer["id"]))
         print(comments)
-    return render_template('display.html', questions=questions, answers=answers,comment_to_question=comment_to_question, comments=comments)
+    return render_template('display.html', questions=questions, answers=answers,
+                           comment_to_question=comment_to_question, comments=comments)
 
 
 @app.route('/question/<question_id>/new-answer', methods=['POST', 'GET'])
@@ -82,11 +99,11 @@ def add_answer(question_id):
 
 @app.route('/update/<int:id>/edit', methods=['POST', 'GET'])
 def update_answer(id):
-    if request.method=="POST":
-        message=request.form.get('message')
-        image=request.form.get('image')
+    if request.method == "POST":
+        message = request.form.get('message')
+        image = request.form.get('image')
         question_id = request.form.get('question_id')
-        data_handler.update_answer(id,message,image)
+        data_handler.update_answer(id, message, image)
         return redirect(url_for('display_question', id=question_id))
 
     answer = data_handler.get_all_answer_by_id(id)
@@ -94,9 +111,6 @@ def update_answer(id):
     #     if line["id"]==int(id):
     #         answer=line
     return render_template('update.html', id=id, answer=answer)
-
-
-
 
 
 @app.route('/question/<question_id>/new-comment', methods=['GET', 'POST'])
@@ -109,11 +123,12 @@ def add_comment_to_question(question_id):
 
     return render_template('add_comment_to_question.html', question_id=question_id)
 
+
 @app.route('/comment/<question_id>/delete', methods=['POST'])
 def delete_comment(question_id):
     if request.method == 'POST':
         data_handler.delete_comment(question_id)
-        return redirect(url_for("display_question",id=question_id))
+        return redirect(url_for("display_question", id=question_id))
 
 
 @app.route('/answer/<answer_id>/new-comment', methods=['POST', 'GET'])
@@ -132,7 +147,6 @@ def comments_on_answers(answer_id):
                            comments_header=comments_header)
 
 
-
 @app.route('/comments/<comment_id>/edit', methods=['GET', 'POST'])
 def edit_answer_comment(comment_id):
     if request.method == 'POST':
@@ -146,6 +160,7 @@ def edit_answer_comment(comment_id):
     print(comment)
     return render_template('edit_answer_comments.html', id=question_id, comment=comment)
 
+
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
     if request.method == 'POST':
@@ -155,12 +170,9 @@ def registration():
         existing_user_names = data_handler.get_all_user_names()
         data_handler.add_new_user(user_name, hashed_password)
 
-
         return redirect(url_for('index'))
 
     return render_template('registration.html')
-
-
 
 
 if __name__ == '__main__':

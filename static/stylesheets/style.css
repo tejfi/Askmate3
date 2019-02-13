@@ -284,3 +284,8 @@ a {
 td a{
     color:black
 }
+
+
+.modal-title{
+    text-align: center;
+}

@@ -234,3 +234,16 @@ def hash_password(plain_text_password):
 def verify_password(plain_text_password, hashed_password):
     hashed_bytes_password = hashed_password.encode('utf-8')
     return bcrypt.checkpw(plain_text_password.encode('utf-8'), hashed_bytes_password)
+
+
+
+@database_common.connection_handler
+def get_password_by_user(cursor,user_name):
+    cursor.execute("""
+    SELECT password FROM users
+    WHERE user_name = %(user_name)s;
+    
+    """, {"user_name":user_name})
+    password = cursor.fetchone()
+    print(password)
+    return password

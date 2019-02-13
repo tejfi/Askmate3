@@ -255,3 +255,5 @@ fabric.properties
 .venv/
 
 # End of https://www.gitignore.io/api/flask,python,pycharm
+.sample_data
+
