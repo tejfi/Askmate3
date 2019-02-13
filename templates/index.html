@@ -27,35 +27,35 @@
                     data-whatever="username">Login
             </button>
         {% endif %}
-    {{ logged_in }}
+        {{ logged_in }}
         <form action="{{ url_for("search") }}" method="GET">
             <input type="text" name="search" placeholder="Search..">
         </form>
     </div>
     {% if logged_in %}
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Submission Time</th>
-            <th>View Number</th>
-            <th>Vote Number</th>
-            <th>Message</th>
-            <th>Title</th>
-
-
-        </tr>
-        {% for line in questions %}
+        <table>
             <tr>
-                <td>{{ line['id'] }}</td>
-                <td>{{ line['submission_time'] }}</td>
-                <td>{{ line['view_number'] }}</td>
-                <td>{{ line['vote_number'] }}</td>
-                <td>{{ line['message'] }}</td>
-                <td><a href="/question/{{ line["id"] }}" style="text-decoration: none">{{ line['title'] }}</a></td>
+                <th>ID</th>
+                <th>Submission Time</th>
+                <th>View Number</th>
+                <th>Vote Number</th>
+                <th>Message</th>
+                <th>Title</th>
+
 
             </tr>
-        {% endfor %}
-    </table>
+            {% for line in questions %}
+                <tr>
+                    <td>{{ line['id'] }}</td>
+                    <td>{{ line['submission_time'] }}</td>
+                    <td>{{ line['view_number'] }}</td>
+                    <td>{{ line['vote_number'] }}</td>
+                    <td>{{ line['message'] }}</td>
+                    <td><a href="/question/{{ line["id"] }}" style="text-decoration: none">{{ line['title'] }}</a></td>
+
+                </tr>
+            {% endfor %}
+        </table>
     {% endif %}
 {% endblock %}
 </body>
