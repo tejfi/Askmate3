@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request, redirect, session,escape, url_for
+from flask import Flask, render_template, request, redirect, session, escape, url_for
 from flask_bootstrap import Bootstrap
-import data_handler, os ,bcrypt
+import data_handler, os, bcrypt
 
 app = Flask(__name__)
 app.secret_key = os.urandom(16)
@@ -57,7 +57,9 @@ def ask_question():
         vote_number = request.form.get("vote_number", type=int)
         message = request.form.get("message")
         image = request.form.get("image")
-        data_handler.insert_question_table(view_number, vote_number, title, message, image)
+        user_id = data_handler.get_user_id_by_user_name(session["user_name"])
+        print(user_id)
+        data_handler.insert_question_table(view_number, vote_number, title, message, image, user_id['id'])
         return redirect('/')
 
     questions = data_handler.get_questions()
@@ -107,9 +109,6 @@ def update_answer(id):
         return redirect(url_for('display_question', id=question_id))
 
     answer = data_handler.get_all_answer_by_id(id)
-    # for line in answer_container:
-    #     if line["id"]==int(id):
-    #         answer=line
     return render_template('update.html', id=id, answer=answer)
 
 

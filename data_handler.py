@@ -32,14 +32,14 @@ def get_answers(cursor):
 
 
 @database_common.connection_handler
-def insert_question_table(cursor, view_number, vote_number, title, message, image):
+def insert_question_table(cursor, view_number, vote_number, title, message, image, user_id):
     submission_time = datetime.now()
-    cursor.execute("""INSERT INTO question(submission_time,view_number,vote_number, title,message,image)
-    VALUES(%(submission_time)s,%(view_number)s,%(vote_number)s,%(title)s,%(message)s,%(image)s);
+    cursor.execute("""INSERT INTO question(submission_time,view_number,vote_number, title,message,image, user_id)
+    VALUES(%(submission_time)s,%(view_number)s,%(vote_number)s,%(title)s,%(message)s,%(image)s,%(user_id)s);
     
     """,
                    {'submission_time': submission_time, 'view_number': view_number, 'vote_number': vote_number,
-                    'title': title, 'message': message, 'image': image})
+                    'title': title, 'message': message, 'image': image,'user_id': user_id})
 
 
 @database_common.connection_handler
@@ -236,14 +236,25 @@ def verify_password(plain_text_password, hashed_password):
     return bcrypt.checkpw(plain_text_password.encode('utf-8'), hashed_bytes_password)
 
 
-
 @database_common.connection_handler
-def get_password_by_user(cursor,user_name):
+def get_password_by_user(cursor, user_name):
     cursor.execute("""
     SELECT password FROM users
     WHERE user_name = %(user_name)s;
     
-    """, {"user_name":user_name})
+    """, {"user_name": user_name})
     password = cursor.fetchone()
     print(password)
     return password
+
+
+@database_common.connection_handler
+def get_user_id_by_user_name(cursor, user_name):
+    cursor.execute("""
+    SELECT id FROM users
+    WHERE user_name = %(user_name)s;
+    
+    """, {"user_name": user_name})
+
+    id = cursor.fetchone()
+    return id
