@@ -1,5 +1,6 @@
 import os, datetime
 import database_common
+import bcrypt
 from datetime import datetime
 
 DATA_FILE_PATH = os.getenv('DATA_FILE_PATH') if 'DATA_FILE_PATH' in os.environ else 'sample_data/question.csv'
@@ -202,3 +203,34 @@ def get_comment_by_id(cursor, id):
     """, {'id': id})
     comment = cursor.fetchone()
     return comment
+
+
+@database_common.connection_handler
+def add_new_user(cursor, user_name, password):
+    registration_date = datetime.now().isoformat(timespec='seconds')
+    reputation = 0
+    cursor.execute("""
+                    INSERT INTO users(user_name, password, registration_date, reputation)
+                    VALUES (%(user_name)s, %(password)s, %(registration_date)s, %(reputation)s);
+                    """, {'user_name': user_name, 'password': password,
+                          'registration_date': registration_date, 'reputation': reputation})
+
+
+@database_common.connection_handler
+def get_all_user_names(cursor):
+    cursor.execute("""
+                    SELECT user_name FROM users;
+                    """)
+    user_names = cursor.fetchall()
+    return user_names
+
+
+def hash_password(plain_text_password):
+    # By using bcrypt, the salt is saved into the hash itself
+    hashed_bytes = bcrypt.hashpw(plain_text_password.encode('utf-8'), bcrypt.gensalt())
+    return hashed_bytes.decode('utf-8')
+
+
+def verify_password(plain_text_password, hashed_password):
+    hashed_bytes_password = hashed_password.encode('utf-8')
+    return bcrypt.checkpw(plain_text_password.encode('utf-8'), hashed_bytes_password)
