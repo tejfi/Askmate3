@@ -253,6 +253,7 @@ fabric.properties
 
 ### Python Patch ###
 .venv/
+.idea/
 
 # End of https://www.gitignore.io/api/flask,python,pycharm
 .sample_data
