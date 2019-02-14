@@ -21,14 +21,14 @@
         <a href="{{ url_for("index") }}">Home Page</a>
         <a href="{{ url_for('list') }}">List all of the questions</a>
         <a href='/ask-question' style="text-decoration: none">Ask a question</a>
-        <a href="{{ url_for('registration') }}">Registration</a>
         {% if logged_in is not defined %}
             <button type="button" class="primary" data-toggle="modal" data-target="#exampleModal"
-                    data-whatever="username">Login
+                    data-whatever="username"><span>Login </span>
             </button>
+            <a href="{{ url_for('registration') }}">Registration</a>
         {% endif %}
 
-                <p>{{ logged_in }}{{ verify }}</p>
+        <a><p>{{ logged_in }}{{ verify }}</p></a>
         <form action="{{ url_for("search") }}" method="GET">
             <input type="text" name="search" placeholder="Search..">
         </form>
@@ -59,6 +59,18 @@
         </table>
     {% endif %}
 {% endblock %}
+<script type="text/javascript" >
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            window.onload=function(){
+            alert('{{ message }}');
+            }
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</script>
+
 </body>
 {% block footer %}
     {% include "footer.html" %}

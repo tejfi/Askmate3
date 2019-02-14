@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, escape, url_for
+from flask import Flask, render_template, request, redirect, session, escape, url_for, flash
 from flask_bootstrap import Bootstrap
 import data_handler, os, bcrypt
 
@@ -18,7 +18,15 @@ def login():
         verify = data_handler.verify_password(plain_text_password, hashed_password["password"])
         if 'user_name' in session and verify:
             logged_in = 'Logged in as %s' % escape(session['user_name'])
-        return render_template("index.html", logged_in=logged_in, questions=questions,verify=verify)
+            flash("Successful Login")
+            return render_template("index.html", logged_in=logged_in, questions=questions, verify=verify)
+
+        else:
+            flash("Invalid Password or Username")
+            return render_template("index.html",questions=questions, verify=verify)
+
+
+
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -58,7 +66,6 @@ def ask_question():
         message = request.form.get("message")
         image = request.form.get("image")
         user_id = data_handler.get_user_id_by_user_name(session["user_name"])
-        print(user_id)
         data_handler.insert_question_table(view_number, vote_number, title, message, image, user_id['id'])
         return redirect('/')
 
@@ -77,7 +84,6 @@ def display_question(id):
     comment_to_question = data_handler.get_comment_by_question_id(id)
     for answer in answers:
         comments.append(data_handler.get_comments_by_answer_id(answer["id"]))
-        print(comments)
     return render_template('display.html', questions=questions, answers=answers,
                            comment_to_question=comment_to_question, comments=comments)
 
@@ -156,7 +162,6 @@ def edit_answer_comment(comment_id):
 
     question_id = request.form.get('question_id')
     comment = data_handler.get_comment_by_id(comment_id)
-    print(comment)
     return render_template('edit_answer_comments.html', id=question_id, comment=comment)
 
 

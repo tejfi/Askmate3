@@ -8,25 +8,26 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
     <script type="text/javascript" src="{{ url_for('static',filename='stylesheets/script.js') }}" defer></script>
     <meta charset="UTF-8">
-    <link rel="icon" href="{{ url_for('static', filename='stylesheets/teamlogo.jpeg') }}" type="image/gif"
-          sizes="16x16">
+    <link  rel="icon" href="{{ url_for('static', filename='stylesheets/teamlogo.jpeg')}}" type="image/gif" sizes="16x16">
     <title>AskMate</title>
 
 </head>
 <body>
 <div class="registrationh-h-tag">
-    <h1> Registration </h1>
+   <h1> Registration </h1>
 </div>
-<div class="registration-form">
+<div class ="registration-form" >
     <form action="{{ url_for('registration') }}" method="post">
-        <div class="registration-input">
-            <input type="text" name="user_name" placeholder="Username">
+        <div class ="registration-input" >
 
-            <input type="password" name="password" placeholder="Password">
-            <br>
-            <br>
-            <input type="submit" class="button" value="Complete">
-        </div>
+
+        <input type="text" name="user_name" placeholder="Username">
+
+        <input type="password" name="password" placeholder="Password">
+        <br>
+        <br>
+        <input type="submit" class="button" value="Complete">
+    </div>
     </form>
 </div>
 </body>
