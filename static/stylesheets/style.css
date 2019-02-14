@@ -278,6 +278,7 @@ td a {
 
 .modal-title {
     text-align: center;
+    font-size: 2em;
 }
 
 
@@ -375,4 +376,8 @@ td a {
 .primary:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+.topnav a>p{
+    margin: 0 0 0 0;
 }

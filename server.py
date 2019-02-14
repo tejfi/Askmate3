@@ -8,6 +8,19 @@ Bootstrap(app)
 app.config['DEBUG'] = True
 
 
+@app.route('/logout', methods=['GET'])
+def logout():
+    if request.method == "GET":
+        session.pop('user_name', None)
+        return redirect(url_for('index'))
+
+
+def logged_user_info():
+    if 'user_name' in session:
+        logged_in = 'Logged in as %s' % escape(session['user_name'])
+        return logged_in
+
+
 @app.route('/logged_in', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -23,24 +36,26 @@ def login():
 
         else:
             flash("Invalid Password or Username")
-            return render_template("index.html",questions=questions, verify=verify)
-
-
-
+            return render_template("index.html", questions=questions, verify=verify)
 
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
+    logged_in=logged_user_info()
     questions = data_handler.get_latest_questions()
     header = data_handler.get_header()
-    return render_template("index.html", questions=questions, header=header)
+    if logged_in is None:
+        return render_template("index.html", questions=questions, header=header)
+    return render_template("index.html", questions=questions, header=header, logged_in=logged_in)
+
 
 
 @app.route('/list')
 def list():
+    logged_in = logged_user_info()
     questions = data_handler.get_questions()
     header = data_handler.get_header()
-    return render_template("list.html", questions=questions, header=header)
+    return render_template("list.html", questions=questions, header=header, logged_in=logged_in)
 
 
 @app.route("/search", methods=["GET"])
@@ -77,6 +92,7 @@ def ask_question():
 @app.route('/question/<id>', methods=['GET', 'POST'])
 def display_question(id):
     comments = []
+    logged_in=logged_user_info()
     answers = data_handler.get_all_answer(id)
     questions = data_handler.get_all_question(id)
     header = data_handler.get_header()
@@ -85,7 +101,7 @@ def display_question(id):
     for answer in answers:
         comments.append(data_handler.get_comments_by_answer_id(answer["id"]))
     return render_template('display.html', questions=questions, answers=answers,
-                           comment_to_question=comment_to_question, comments=comments)
+                           comment_to_question=comment_to_question, comments=comments,logged_in=logged_in)
 
 
 @app.route('/question/<question_id>/new-answer', methods=['POST', 'GET'])

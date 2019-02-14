@@ -18,17 +18,20 @@
 {% block content %}
 
     <div class="topnav">
-        <a href="{{ url_for("index") }}">Home Page</a>
+        <a href="{{ url_for('index') }}">Home Page</a>
         <a href="{{ url_for('list') }}">List all of the questions</a>
-        <a href='/ask-question' style="text-decoration: none">Ask a question</a>
+
         {% if logged_in is not defined %}
+            <a href="{{ url_for('registration') }}">Registration</a>
             <button type="button" class="primary" data-toggle="modal" data-target="#exampleModal"
                     data-whatever="username"><span>Login </span>
             </button>
-            <a href="{{ url_for('registration') }}">Registration</a>
         {% endif %}
-
-        <a><p>{{ logged_in }}{{ verify }}</p></a>
+        {% if logged_in is defined %}
+            <a href="{{ url_for('logout' ) }}">Logout</a>
+            <a href="{{ url_for('ask_question')}}">Ask a question</a>
+        {% endif %}
+        <a><p>{{ logged_in }}</p></a>
         <form action="{{ url_for("search") }}" method="GET">
             <input type="text" name="search" placeholder="Search..">
         </form>
@@ -59,16 +62,16 @@
         </table>
     {% endif %}
 {% endblock %}
-<script type="text/javascript" >
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for message in messages %}
-            window.onload=function(){
-            alert('{{ message }}');
-            }
-        {% endfor %}
-    {% endif %}
-{% endwith %}
+<script type="text/javascript">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                window.onload = function () {
+                    alert('{{ message }}');
+                }
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 </script>
 
 </body>
