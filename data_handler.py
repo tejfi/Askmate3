@@ -202,3 +202,41 @@ def get_comment_by_id(cursor, id):
     """, {'id': id})
     comment = cursor.fetchone()
     return comment
+
+
+@database_common.connection_handler
+def get_question_vote_number_by_id(cursor, id):
+    cursor.execute('''
+    SELECT vote_number FROM question
+        WHERE id = %(id)s;
+    ''', {'id':id})
+    vote_number_dict = cursor.fetchone()
+    vote_number = vote_number_dict['vote_number']
+    return vote_number
+
+
+@database_common.connection_handler
+def get_answer_vote_number_by_id(cursor, id):
+    cursor.execute('''
+    SELECT vote_number FROM answer
+        WHERE id = %(id)s;
+    ''', {'id':id})
+    vote_number_dict = cursor.fetchone()
+    vote_number = vote_number_dict['vote_number']
+    return vote_number
+
+
+@database_common.connection_handler
+def update_question_vote_number(cursor, vote_number, id):
+    cursor.execute('''
+    UPDATE question SET vote_number = %(vote_number)s
+    WHERE id = %(id)s
+    ''', {'vote_number': vote_number, 'id': id})
+
+
+@database_common.connection_handler
+def update_answer_vote_number(cursor, vote_number, id):
+    cursor.execute('''
+    UPDATE answer SET vote_number = %(vote_number)s
+    WHERE id = %(id)s
+    ''', {'vote_number': vote_number, 'id': id})

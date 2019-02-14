@@ -77,8 +77,16 @@
                 {#                <td>{{ line['id'] }}</td>#}
                 <td>{{ line['submission_time'] }}</td>
                 {#                <td>{{ line['view_number'] }}</td>#}
-                {#                <td>{{ line['vote_number'] }}#}
+                <td>{{ line['vote_number'] }}
                 <td>{{ line['title'] }}</td>
+                <td>
+                <form action="{{ url_for('vote_question_up', id=line['id']) }}" name="vote_up" method="POST">
+                    <input class="button" type="submit" value="Vote Up">
+                </form>
+                <form action="{{ url_for('vote_question_down', id=line['id']) }}" name="vote_down" method="POST">
+                    <input class="button" type="submit" value="Vote Down">
+                </form>
+                </td>
                 <td>{{ line['message'] }}</td>
 
             </tr>
@@ -99,8 +107,19 @@
             <tr>
                 <td>{{ answer["id"] }}</td>
                 <td>{{ answer["submission_time"] }}</td>
+                <td>{{ answer['vote_number'] }}</td>
                 <td>{{ answer['question_id'] }}</td>
                 <td>{{ answer['message'] }}</td>
+                <td>
+                <form action="{{ url_for('vote_answer_up', id=answer['id']) }}" name="vote_up" method="POST">
+                    <input class="button" type="submit" value="Vote Up">
+                    <input type="hidden" name="question_id" value="{{ answer['question_id'] }}">
+                </form>
+                <form action="{{ url_for('vote_answer_down', id=answer['id']) }}" name="vote_down" method="POST">
+                    <input class="button" type="submit" value="Vote Down">
+                    <input type="hidden" name="question_id" value="{{ answer['question_id'] }}">
+                </form>
+                </td>
                 <td>{{ answer['image'] }}</td>
                 <td>
                     <div id="button">

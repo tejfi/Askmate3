@@ -59,14 +59,13 @@ def display_question(id):
     comment_to_question = data_handler.get_comment_by_question_id(id)
     for answer in answers:
         comments.append(data_handler.get_comments_by_answer_id(answer["id"]))
-        print(comments)
     return render_template('display.html', questions=questions, answers=answers,comment_to_question=comment_to_question, comments=comments)
 
 
 @app.route('/question/<question_id>/new-answer', methods=['POST', 'GET'])
 def add_answer(question_id):
     if request.method == 'POST':
-        vote_number = request.form["vote_number"]
+        vote_number = 0
         message = request.form["message"]
         image = request.form["image"]
         data_handler.insert_answer_table(vote_number, question_id, message, image)
@@ -140,13 +139,43 @@ def edit_answer_comment(comment_id):
         message = request.form.get('message')
         data_handler.edit_answer_comment(message, comment_id)
         return redirect(url_for('display_question', id=question_id))
-
     question_id = request.form.get('question_id')
     comment = data_handler.get_comment_by_id(comment_id)
-    print(comment)
     return render_template('edit_answer_comments.html', id=question_id, comment=comment)
 
 
+@app.route('/question/<id>/vote-up', methods=['POST'])
+def vote_question_up(id):
+    if request.method == 'POST':
+        vote_number = data_handler.get_question_vote_number_by_id(id) + 1
+        data_handler.update_question_vote_number(vote_number, id)
+        return redirect(url_for("display_question", id=id))
+
+
+@app.route('/question/<id>/vote-down', methods=['POST'])
+def vote_question_down(id):
+    if request.method == 'POST':
+        vote_number = data_handler.get_question_vote_number_by_id(id) - 1
+        data_handler.update_question_vote_number(vote_number, id)
+        return redirect(url_for("display_question", id=id))
+
+
+@app.route('/answer/<id>/vote-up', methods=['POST'])
+def vote_answer_up(id):
+    if request.method == 'POST':
+        question_id = request.form.get('question_id')
+        vote_number = data_handler.get_answer_vote_number_by_id(id) + 1
+        data_handler.update_answer_vote_number(vote_number, id)
+        return redirect(url_for("display_question", id=question_id))
+
+
+@app.route('/answer/<id>/vote-down', methods=['POST'])
+def vote_answer_down(id):
+    if request.method == 'POST':
+        question_id = request.form.get('question_id')
+        vote_number = data_handler.get_answer_vote_number_by_id(id) - 1
+        data_handler.update_answer_vote_number(vote_number, id)
+        return redirect(url_for("display_question", id=question_id))
 
 
 if __name__ == '__main__':
