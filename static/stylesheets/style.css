@@ -326,3 +326,21 @@ td a {
     border: 1px solid transparent;
     border-radius: 4px;
 }
+.registration-form{
+    margin-top: 10%;
+    text-align: center;
+    align-content: center;
+    color: #cccccc;
+    display:grid;
+}
+
+.registrationh-h-tag h1{
+    text-align: center;
+}
+
+.registration-input input[type=text]{
+    padding:20px
+}
+.registration-input input[type=password]{
+    padding:20px
+}
