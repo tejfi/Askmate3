@@ -116,7 +116,8 @@ h1, h2 {
     margin-right: 16px;
     border: none;
     font-size: 17px;
-    width:auto;}
+    width: auto;
+}
 
 @media screen and (max-width: 600px) {
     .topnav a, .topnav input[type=text] {
@@ -219,7 +220,7 @@ textarea {
 
 th, td, tr:FIRST-CHILD {
     text-align: center;
-    padding: 1px;
+    /*padding: 1px;*/
 }
 
 table th:nth-child(1) {
@@ -259,7 +260,9 @@ a {
 }
 
 td a {
-    color: black
+    color:  #2196F3;
+    font-weight: bold;
+    font-size: xx-large;
 }
 
 
@@ -327,57 +330,100 @@ td a {
     border: 1px solid transparent;
     border-radius: 4px;
 }
-.registration-form{
+
+.registration-form {
     margin-top: 10%;
     text-align: center;
     align-content: center;
     color: #cccccc;
-    display:grid;
+    display: grid;
 }
 
-.registrationh-h-tag h1{
+.registrationh-h-tag h1 {
     text-align: center;
 }
 
-.registration-input input[type=text]{
-    padding:20px
+.registration-input input[type=text] {
+    padding: 20px
 }
-.registration-input input[type=password]{
-    padding:20px
+
+.registration-input input[type=password] {
+    padding: 20px
 }
 
 
-.valid-user-info p{
+.valid-user-info p {
     margin-right: 20px;
-    color:white;
+    color: white;
 }
 
 
 .primary span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
 }
 
 .primary span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
 }
 
 .primary:hover span {
-  padding-right: 25px;
+    padding-right: 25px;
 }
 
 .primary:hover span:after {
-  opacity: 1;
-  right: 0;
+    opacity: 1;
+    right: 0;
 }
 
-.topnav a>p{
+.topnav a > p {
     margin: 0 0 0 0;
+}
+
+.vote-tag, .view-tag {
+    color: #2196F3;
+    font-weight: bolder;
+}
+
+.submisson-tag{
+    color: #2196F3;
+    font-weight: bolder;
+    text-align: center;
+    padding: 1%;
+
+}
+
+
+.question-title{
+    text-align: center;
+}
+.question-title a{
+    padding: 1%;
+    color: #2aabd2;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.vote{
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.block{
+   height: 400px;
+}
+
+
+
+.logged-user-navbar{
+    margin-left: 30%;
+    font-weight: bold;
+    font-family: monospace;
 }

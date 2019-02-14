@@ -33,7 +33,7 @@ def get_answers(cursor):
 
 @database_common.connection_handler
 def insert_question_table(cursor, view_number, vote_number, title, message, image, user_id):
-    submission_time = datetime.now()
+    submission_time = datetime.now().isoformat(timespec='seconds')
     cursor.execute("""INSERT INTO question(submission_time,view_number,vote_number, title,message,image, user_id)
     VALUES(%(submission_time)s,%(view_number)s,%(vote_number)s,%(title)s,%(message)s,%(image)s,%(user_id)s);
     
@@ -44,7 +44,7 @@ def insert_question_table(cursor, view_number, vote_number, title, message, imag
 
 @database_common.connection_handler
 def insert_answer_table(cursor, vote_number, question_id, message, image):
-    submission_time = datetime.now()
+    submission_time = datetime.now().isoformat(timespec='seconds')
     cursor.execute("""INSERT INTO answer(submission_time,vote_number, question_id,message,image)
        VALUES(%(submission_time)s,%(vote_number)s,%(question_id)s, %(message)s,%(image)s);
 
@@ -97,7 +97,7 @@ def get_latest_questions(cursor):
 
 @database_common.connection_handler
 def update_answer(cursor, id, message, image):
-    submission_time = datetime.now()
+    submission_time = datetime.now().isoformat(timespec='seconds')
     cursor.execute("""
     UPDATE answer set submission_time=%(submission_time)s, message=%(message)s,image=%(image)s
     WHERE id = %(id)s;
