@@ -18,7 +18,7 @@ def login():
         verify = data_handler.verify_password(plain_text_password, hashed_password["password"])
         if 'user_name' in session and verify:
             logged_in = 'Logged in as %s' % escape(session['user_name'])
-        return render_template("index.html", logged_in=logged_in, questions=questions)
+        return render_template("index.html", logged_in=logged_in, questions=questions,verify=verify)
 
 
 @app.route('/', methods=['POST', 'GET'])

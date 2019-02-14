@@ -8,3 +8,42 @@
 </div>
 </body>
 </html>
+
+
+<div class="modal-body">
+    <!-- The form is placed inside the body of modal -->
+    <form id="loginForm" method="post" class="form-horizontal bv-form" novalidate="novalidate" _lpchecked="1">
+        <button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+        <div class="form-group has-feedback has-success">
+            <label class="col-sm-3 control-label">Username</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="username" data-bv-field="username"
+                       style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"><i
+                    class="form-control-feedback glyphicon glyphicon-ok" data-bv-icon-for="username"
+                    style="display: block;"></i>
+                <small class="help-block" data-bv-validator="notEmpty" data-bv-for="username" data-bv-result="VALID"
+                       style="display: none;">The username is required
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group has-feedback has-success">
+            <label class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-5">
+                <input type="password" class="form-control" name="password" data-bv-field="password" autocomplete="off"
+                       style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"><i
+                    class="form-control-feedback glyphicon glyphicon-ok" data-bv-icon-for="password"
+                    style="display: block;"></i>
+                <small class="help-block" data-bv-validator="notEmpty" data-bv-for="password" data-bv-result="VALID"
+                       style="display: none;">The password is required
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-5 col-sm-offset-3">
+                <button type="submit" class="btn btn-default">Login</button>
+            </div>
+        </div>
+    </form>
+</div>
